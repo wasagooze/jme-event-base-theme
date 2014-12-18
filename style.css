@@ -2776,6 +2776,10 @@ footer .widget-title {
   text-align: center;
 }
 
+#secondary .widget-title {
+	display: none;
+}
+
 #copyright {
   font-size: 13px;
   text-align: center;

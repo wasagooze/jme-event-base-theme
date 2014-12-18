@@ -4,29 +4,41 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
  */
 ?>
 
 	</div><!-- #main -->
 
 	<footer id="colophon" role="contentinfo">
+		<div id="supplementary" class="three">
 
-			<?php
-				/*
-				 * A sidebar in the footer? Yep. You can can customize
-				 * your footer with three columns of widgets.
-				 */
-				if ( ! is_404() )
-					get_sidebar( 'footer' );
+		<div id="first" class="widget-area" role="complementary">
+			<?php 
+			if(is_active_sidebar('footer-sidebar-1')){
+				dynamic_sidebar('footer-sidebar-1');
+			}
 			?>
+		</div>
 
-			<div id="site-generator">
-				<?php do_action( 'twentyeleven_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?></a>
-			</div>
+			<div id="second" class="widget-area" role="complementary">
+			<?php 
+			if(is_active_sidebar('footer-sidebar-2')){
+				dynamic_sidebar('footer-sidebar-2');
+			}
+			?>
+		</div>		
+			
+		<div id="third" class="widget-area" role="complementary">
+			<?php 
+			if(is_active_sidebar('footer-sidebar-3')){
+				dynamic_sidebar('footer-sidebar-3');
+			}
+			?>
+		</div><!-- #third .widget-area -->
+	</div>
+	<div id="copyright">
+		<?php if (is_active_sidebar('footer-copyright')) { dynamic_sidebar( 'footer-copyright'); } ?>
+	</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

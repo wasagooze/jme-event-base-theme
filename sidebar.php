@@ -1,6 +1,9 @@
 
 <div id="secondary" class="widget-area" role="complementary">
 
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<?php else : ?>
 	<aside id="search-2" class="widget widget_search">
 	  <form method="get" id="searchform" action="/">
 	    <label for="s" class="assistive-text">Search</label>
@@ -16,4 +19,6 @@
 	<aside class="widget">
 	  <div class="fb-like" data-href="https://www.facebook.com/WickedFaire" data-width="120" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 	</aside>
+<?php endif; ?>
+
 </div><!-- #secondary .widget-area -->
