@@ -10,13 +10,9 @@
 	</aside>
 	<aside class="widget">
 	  <a href="/tickets" target="_self" class="tickets-link" title="Buy Tickets Now">
+	  	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tickets-button.png" alt="Buy Tickets Now!" />
 	  </a>
 	</aside>		
-	<aside class="widget">
-	  <a href="/catering" target="_self" class="drinks-link" title="Drinks and Dining">
-	  </a>
-	</aside>	
-	
 	<aside class="widget">
 	  <div class="fb-like" data-href="https://www.facebook.com/WickedFaire" data-width="120" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 	</aside>

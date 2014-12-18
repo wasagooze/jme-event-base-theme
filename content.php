@@ -36,9 +36,6 @@
 
     <footer class="entry-meta">
       <?php if ( 'post' == get_post_type() ) : ?>
-      <div class="entry-meta">
-        <?php twentyeleven_posted_on(); ?>
-      </div><!-- .entry-meta -->
       <?php endif; ?>
       <?php $show_sep = false; ?>
       <?php if ( is_object_in_taxonomy( get_post_type(), 'category' ) ) : // Hide category text when not supported ?>
