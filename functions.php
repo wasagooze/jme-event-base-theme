@@ -50,6 +50,13 @@ function jme_event_base_setup() {
    */
   set_post_thumbnail_size( $custom_header_support['width'], $custom_header_support['height'], true );
 
+
+  $defaults = array(
+      'default-image' => get_template_directory_uri() . '/images/header.png'
+  );
+
+  add_theme_support( 'custom-header', $defaults);
+
 }
 endif; // base setup
 
@@ -262,6 +269,9 @@ function jme_widgets_init() {
     'before_widget' => '<div id="copyright">',
     'after_widget' => "</div>"
   ) );
+
+  unregister_widget('WP_Widget_Calendar'); //removes calendar widget
+  unregister_widget('WP_Widget_Recent_Comments'); // removes recent comments widget 
 }
 add_action( 'widgets_init', 'jme_widgets_init' );
 

@@ -71,7 +71,7 @@
 <div id="page" class="hfeed">
 		<header id="branding" role="banner">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header.png" alt="" />
+				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
 			</a>
 			<nav id="access" role="navigation">
 				<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
