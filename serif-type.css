@@ -1,0 +1,34 @@
+/* Font stack */
+body {
+  font-family: Georgia, serif;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3, 
+.entry-content h4, 
+.entry-content h5, 
+.entry-content h6 {
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 100%;
+  text-transform: none;
+}
+
+.entry-title,
+.page-title {
+  color: black;
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  font-size: 3em;
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+}
+
+.category .entry-title {
+   font-family: 'Georgia', serif;
+   font-size: 1.5em;
+}
