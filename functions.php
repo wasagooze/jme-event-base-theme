@@ -13,23 +13,11 @@ if ( ! function_exists( 'jme_event_base_setup' ) ):
 
 function jme_event_base_setup() {
 
-	  /*
-   * Make Twenty Eleven available for translation.
-   * Translations can be added to the /languages/ directory.
-   * If you're building a theme based on Twenty Eleven, use
-   * a find and replace to change 'twentyeleven' to the name
-   * of your theme in all the template files.
-   */
-  load_theme_textdomain( 'twentyeleven', get_template_directory() . '/languages' );
-
-  // This theme styles the visual editor with editor-style.css to match the theme style.
-  add_editor_style();
-
   // Add default posts and comments RSS feed links to <head>.
   add_theme_support( 'automatic-feed-links' );
 
   // This theme uses wp_nav_menu() in one location.
-  register_nav_menu( 'primary', __( 'Primary Menu', 'twentyeleven' ) );
+  register_nav_menu( 'primary', __( 'Primary Menu', 'jme-event-base-theme' ) );
 
   // Add support for custom backgrounds.
   add_theme_support( 'custom-background', array(
@@ -52,107 +40,17 @@ function jme_event_base_setup() {
 
 
   $defaults = array(
-      'default-image' => get_template_directory_uri() . '/images/header.png'
+      'default-image' => get_stylesheet_directory_uri() . '/images/header.png',
+      'width' => 930,
+      'height' => 260,
+      'uploads' => true,
+
   );
 
   add_theme_support( 'custom-header', $defaults);
 
 }
 endif; // base setup
-
-if ( ! function_exists( 'twentyeleven_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
- *
- * @since Twenty Eleven 1.0
- */
-function twentyeleven_admin_header_style() {
-?>
-	<style type="text/css" id="twentyeleven-admin-header-css">
-	.appearance_page_custom-header #headimg {
-		border: none;
-	}
-	#headimg h1,
-	#desc {
-		font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-	}
-	#headimg h1 {
-		margin: 0;
-	}
-	#headimg h1 a {
-		font-size: 32px;
-		line-height: 36px;
-		text-decoration: none;
-	}
-	#desc {
-		font-size: 14px;
-		line-height: 23px;
-		padding: 0 0 3em;
-	}
-	<?php
-		// If the user has set a custom color for the text use that
-		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
-	?>
-		#site-title a,
-		#site-description {
-			color: #<?php echo get_header_textcolor(); ?>;
-		}
-	<?php endif; ?>
-	#headimg img {
-		max-width: 1000px;
-		height: auto;
-		width: 100%;
-	}
-	</style>
-<?php
-}
-endif; // twentyeleven_admin_header_style
-
-if ( ! function_exists( 'twentyeleven_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
- *
- * @since Twenty Eleven 1.0
- */
-function twentyeleven_admin_header_image() { ?>
-	<div id="headimg">
-		<?php
-		$color = get_header_textcolor();
-		$image = get_header_image();
-		if ( $color && $color != 'blank' )
-			$style = ' style="color:#' . $color . '"';
-		else
-			$style = ' style="display:none"';
-		?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( $image ) : ?>
-			<img src="<?php echo esc_url( $image ); ?>" alt="" />
-		<?php endif; ?>
-	</div>
-<?php }
-endif; // twentyeleven_admin_header_image
-
-/**
- * Set the post excerpt length to 40 words.
- *
- * To override this length in a child theme, remove
- * the filter and add your own function tied to
- * the excerpt_length filter hook.
- *
- * @since Twenty Eleven 1.0
- *
- * @param int $length The number of excerpt characters.
- * @return int The filtered number of characters.
- */
-function twentyeleven_excerpt_length( $length ) {
-	return 40;
-}
-add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
 
 if ( ! function_exists( 'twentyeleven_continue_reading_link' ) ) :
 /**
@@ -166,58 +64,6 @@ function twentyeleven_continue_reading_link() {
 	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
 }
 endif; // twentyeleven_continue_reading_link
-
-/**
- * Replace "[...]" in the Read More link with an ellipsis.
- *
- * The "[...]" is appended to automatically generated excerpts.
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- *
- * @since Twenty Eleven 1.0
- *
- * @param string $more The Read More text.
- * @return The filtered Read More text.
- */
-function twentyeleven_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyeleven_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
-
-/**
- * Add a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since Twenty Eleven 1.0
- *
- * @param string $output The "Continue Reading" link.
- * @return string The filtered "Continue Reading" link.
- */
-function twentyeleven_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= twentyeleven_continue_reading_link();
-	}
-	return $output;
-}
-add_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
-
-/**
- * Show a home link for the wp_nav_menu() fallback, wp_page_menu().
- *
- * @since Twenty Eleven 1.0
- *
- * @param array $args The page menu arguments. @see wp_page_menu()
- * @return array The filtered page menu arguments.
- */
-function twentyeleven_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'twentyeleven_page_menu_args' );
 
 /**
  * Register sidebars and widgetized areas.
