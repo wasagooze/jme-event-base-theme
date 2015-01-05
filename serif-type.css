@@ -1,6 +1,14 @@
 /* Font stack */
+
+@import url("http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic,600,600italic");
+
 body {
-  font-family: Georgia, serif;
+  font-family: 'Crimson Text', Georgia, serif;
+}
+
+#access ul a {
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 .entry-content h1,
@@ -9,7 +17,7 @@ body {
 .entry-content h4, 
 .entry-content h5, 
 .entry-content h6 {
-  font-family: 'Georgia', serif;
+  font-family: 'Crimson Text', Georgia, serif;
   font-weight: normal;
   letter-spacing: 0;
   line-height: 100%;
@@ -19,16 +27,13 @@ body {
 .entry-title,
 .page-title {
   color: black;
-  font-family: 'Georgia', serif;
-  font-weight: normal;
-  font-size: 2em;
-  line-height: 125%;
-  padding: 0;
-  margin: 0;
-  text-transform: none;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 .category .entry-title {
-   font-family: 'Georgia', serif;
+   font-family: 'Crimson Text', Georgia, serif;
    font-size: 1.5em;
 }
