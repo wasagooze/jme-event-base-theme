@@ -27,7 +27,7 @@ body {
 .entry-title,
 .page-title {
   color: black;
-  font-family: 'Crimson Text', Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 1.75em;
   font-weight: 700;
   line-height: 100%;
@@ -36,4 +36,9 @@ body {
 .category .entry-title {
    font-family: 'Crimson Text', Georgia, serif;
    font-size: 1.5em;
+}
+
+/* Readability more important in the footer */
+#colophon {
+  font-family: Georgia, serif;
 }
