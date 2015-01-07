@@ -6,7 +6,8 @@ body {
   font-family: 'Crimson Text', Georgia, serif;
 }
 
-#access ul a {
+.main-menu ul a,
+.show-menu {
   font-weight: bold;
   font-size: 1.25em;
 }
