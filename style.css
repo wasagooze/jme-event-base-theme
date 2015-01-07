@@ -2211,6 +2211,10 @@ footer .widget-title {
     display: block;
 }
 
+.page-header {
+	padding-bottom: 1em;
+}
+
 @media screen and (max-width: 760px) {
 
 	#access {
