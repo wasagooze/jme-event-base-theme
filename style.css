@@ -2169,6 +2169,18 @@ footer .widget-title {
 	padding-bottom: 1em;
 }
 
+#secondary .widget-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 150%;
+  text-transform: none;
+}
+
+#secondary .constant-contact-form .widget-title {
+	display: block;
+}
+
 @media screen and (min-width: 761px) {
 	.main-menu ul ul {
 		-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
