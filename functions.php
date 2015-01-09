@@ -49,6 +49,8 @@ function jme_event_base_setup() {
 
   add_theme_support( 'custom-header', $defaults);
 
+  wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+
 }
 endif; // base setup
 
