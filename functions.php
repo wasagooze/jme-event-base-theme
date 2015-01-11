@@ -13,9 +13,6 @@ if ( ! function_exists( 'jme_event_base_setup' ) ):
 
 function jme_event_base_setup() {
 
-  // Add default posts and comments RSS feed links to <head>.
-  add_theme_support( 'automatic-feed-links' );
-
   // This theme uses wp_nav_menu() in one location.
   register_nav_menu( 'primary', __( 'Primary Menu', 'jme-event-base-theme' ) );
 
@@ -48,8 +45,6 @@ function jme_event_base_setup() {
   );
 
   add_theme_support( 'custom-header', $defaults);
-
-  wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 
 }
 endif; // base setup
