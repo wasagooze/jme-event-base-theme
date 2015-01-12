@@ -71,7 +71,7 @@
 <div id="page" class="hfeed">
 		<header id="branding" role="banner">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
+				<img src="<?php header_image(); ?>" alt="<?php echo bloginfo('name'); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
 			</a>
 
 			<label for="show-menu" class="main-menu show-menu">
