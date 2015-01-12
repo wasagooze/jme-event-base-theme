@@ -680,10 +680,8 @@ a:hover {
 	color: #666;
 	font-size: 10px;
 	font-weight: 500;
-	letter-spacing: 0.1em;
 	line-height: 2.6em;
 	margin: 0;
-	text-transform: uppercase;
 }
 .page-title a {
 	font-size: 12px;
@@ -2244,5 +2242,13 @@ footer .widget-title {
 
   .main-menu ul ul {
   	display: none;
+  }
+
+  #content .hentry {
+  	background-color: transparent;
+  	border-radius: 0;
+  	box-shadow: none;
+  	padding: 0;
+  	margin: 0;
   }
 }
