@@ -3,6 +3,7 @@
 ----------------------------------------------- */
 
 #colophon {
+  background-color: black;
   clear: both;
 }
 #supplementary {
@@ -44,4 +45,16 @@
 #site-generator a {
   color: #555;
   font-weight: bold;
+}
+
+/* JME Customization */
+footer .widget ul li {
+  line-height: 1.5em;
+}
+
+footer .widget-title {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  text-transform: none;
+  text-align: center;
 }

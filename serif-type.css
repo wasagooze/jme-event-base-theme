@@ -2,14 +2,11 @@
 
 @import url("http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic,600,600italic");
 
-body {
-  font-family: 'Crimson Text', Georgia, serif;
-}
-
 .main-menu ul a,
 .show-menu {
-  font-weight: bold;
+  font-family: 'Crimson Text', Georgia, serif;  
   font-size: 1.25em;
+  font-weight: bold;
 }
 
 .entry-content h1,
@@ -18,11 +15,12 @@ body {
 .entry-content h4, 
 .entry-content h5, 
 .entry-content h6 {
-  font-family: 'Crimson Text', Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: normal;
   letter-spacing: 0;
   line-height: 100%;
   text-transform: none;
+  margin: 0;
 }
 
 .entry-title,
@@ -35,7 +33,7 @@ body {
 }
 
 .category .entry-title {
-   font-family: 'Crimson Text', Georgia, serif;
+   font-family: Georgia, serif;
    font-size: 1.5em;
 }
 

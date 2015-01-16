@@ -1,31 +1,5 @@
 /* FOR JME Theme */
 
-.entry-header,
-.singular .entry-header {
-  width: auto;
-}
-
-.entry-content,
-.singular .entry-content {
-  padding-top: 0.5em;
-  width: auto;
-}
-
-#primary,
-.singular #primary {
-  margin: 0 -26.4% 0 0;
-}
-
-#content,
-.singular #content {
-  margin: 0px 34% 0px 2%;
-  width: 66.67%;
-}
-
-#colophon {
-  background-color: black;
-}
-
 p {
   margin-bottom: 0.8125em;
   margin-top: 0.8125em;
@@ -43,25 +17,6 @@ p {
   line-height: 1.25em;
 }
 
-footer .widget {
-  padding: 0 1em;
-}
-
-.widget ul {
-  list-style-type: none;
-}
-
-footer .widget ul li {
-  line-height: 1.5em;
-}
-
-footer .widget-title {
-  font-size: 1.25em;
-  line-height: 1.5em;
-  text-transform: none;
-  text-align: center;
-}
-
 #secondary .widget-title {
   display: none;
 }
@@ -71,34 +26,6 @@ footer .widget-title {
   text-align: center;
 }
 
-/*Style 'show menu' label button and hide it by default*/
-.show-menu {
-  display: none;
-  margin-bottom: 0;
-}
-
-/*Hide checkbox*/
-#show-menu {
-    display: none;
-}
-
-/*Show menu when invisible checkbox is checked*/
-#show-menu:checked + #access{
-    display: block;
-}
-
 .page-header {
   padding-bottom: 1em;
-}
-
-#secondary .widget-title {
-  font-size: 1.25em;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 150%;
-  text-transform: none;
-}
-
-#secondary .constant-contact-form .widget-title {
-  display: block;
 }

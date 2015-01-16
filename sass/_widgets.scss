@@ -5,6 +5,7 @@
 .widget-area {
   font-size: 12px;
 }
+
 .widget {
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -23,6 +24,7 @@
 }
 .widget ul {
   font-size: 15px;
+  list-style-type: none;
   margin: 0;
 }
 .widget ul ul {
@@ -89,3 +91,22 @@
   height: auto;
   max-width: 100%;
 }
+
+/* JME Customization */
+
+footer .widget {
+  padding: 0 1em;
+}
+
+#secondary .widget-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 150%;
+  text-transform: none;
+}
+
+#secondary .constant-contact-form .widget-title {
+  display: block;
+}
+
