@@ -2,7 +2,7 @@
 
 @import url("http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic,600,600italic");
 
-.main-menu ul a,
+#menu-main-menu > li > a,
 .show-menu {
   font-family: 'Crimson Text', Georgia, serif;  
   font-size: 1.25em;

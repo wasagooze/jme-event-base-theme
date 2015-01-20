@@ -159,6 +159,7 @@ body {
 body, input, textarea {
   color: #373737;
   font-family: Open Sans, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
   font-weight: 300;
   line-height: 1.625; }
 
@@ -511,7 +512,7 @@ a:hover {
 
 .entry-content,
 .entry-summary {
-  padding: 1.625em 0 0; }
+  padding: 0; }
 
 .entry-content h1,
 .entry-content h2,
