@@ -113,6 +113,12 @@ function jme_widgets_init() {
     'after_widget' => "</div>"
   ) );
 
+
+  register_sidebar( array(
+    'name' => '404 Template',
+    'id' => '404-template'
+  ) );
+
   unregister_widget('WP_Widget_Calendar'); //removes calendar widget
   unregister_widget('WP_Widget_Recent_Comments'); // removes recent comments widget 
 }
