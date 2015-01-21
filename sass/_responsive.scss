@@ -27,13 +27,6 @@
     overflow: hidden;
   }
 
-  #page, #main, #primary {
-    display: block;
-  }
-
-  #secondary {
-    display: none;
-  }
 }
 
 @media (max-width: 650px) {
@@ -154,6 +147,15 @@
 }
 @media screen and (max-width: 760px) {
 
+  // one column layout
+  #page, #main, #primary {
+    display: block;
+  }
+
+  #secondary {
+    display: none;
+  }
+
   #supplementary {
     padding: 1em;
   }
@@ -172,6 +174,15 @@
 
   .main-menu ul ul {
     display: none;
+  }
+
+  .main-menu ul a {
+    background: #f9f9f9;
+    border-bottom: 1px dotted #ddd;
+    color: #444;
+    font-size: 13px;
+    font-weight: normal;
+    height: auto;
   }
 
   #content .hentry {
