@@ -7,20 +7,7 @@
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-      <?php if ( is_sticky() ) : ?>
-        <hgroup>
-          <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-          <h3 class="entry-format">Featured</h3>
-        </hgroup>
-      <?php else : ?>
       <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-      <?php endif; ?>
-
-      <?php if ( comments_open() && ! post_password_required() ) : ?>
-      <div class="comments-link">
-        <?php comments_popup_link( '<span class="leave-reply">Reply</span>', _x( '1', 'comments number', 'jme-event-base-theme' ), _x( '%', 'comments number', 'jme-event-base-theme' ) ); ?>
-      </div>
-      <?php endif; ?>
     </header><!-- .entry-header -->
 
     <?php if ( is_search() ) : // Only display Excerpts for Search ?>
