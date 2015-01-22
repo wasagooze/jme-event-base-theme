@@ -22,6 +22,7 @@ body {
 #primary {
   display: table-cell;
   margin: 0;
+  vertical-align: top;
 }
 
 #content {
@@ -31,6 +32,7 @@ body {
 #secondary {
   display: table-cell;
   margin: 0;
+  vertical-align: top;
   width: 20%;
 }
 

@@ -70,7 +70,8 @@ body {
 
 #primary {
   display: table-cell;
-  margin: 0; }
+  margin: 0;
+  vertical-align: top; }
 
 #content {
   padding-right: 3.25em; }
@@ -78,6 +79,7 @@ body {
 #secondary {
   display: table-cell;
   margin: 0;
+  vertical-align: top;
   width: 20%; }
 
 /* error404 */
@@ -119,7 +121,7 @@ body {
   background: #e2e2e2; }
 
 #page {
-  background: #fff; }
+  background: transparent; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
