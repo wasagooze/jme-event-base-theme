@@ -156,6 +156,14 @@
     display: none;
   }
 
+  #content {
+    padding-right: 0;
+  }
+
+  #content article {
+    padding-bottom: 1em;
+  }
+
   #supplementary {
     padding: 1em;
   }

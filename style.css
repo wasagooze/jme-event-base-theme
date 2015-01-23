@@ -953,6 +953,12 @@ p {
 .page-header {
   padding-bottom: 1em; }
 
+.error404 .widgettitle {
+  display: none; }
+
+.error404 li {
+  list-style-type: none; }
+
 /* =Responsive Structure
 ----------------------------------------------- */
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
@@ -1089,6 +1095,12 @@ p {
 
   #secondary {
     display: none; }
+
+  #content {
+    padding-right: 0; }
+
+  #content article {
+    padding-bottom: 1em; }
 
   #supplementary {
     padding: 1em; }
