@@ -71,6 +71,7 @@ body {
 #primary {
   display: table-cell;
   margin: 0;
+  max-width: 200px;
   vertical-align: top; }
 
 #content {
@@ -79,6 +80,7 @@ body {
 #secondary {
   display: table-cell;
   margin: 0;
+  max-width: 200px;
   vertical-align: top;
   width: 20%; }
 
@@ -1100,9 +1102,6 @@ p {
   #content {
     padding-right: 0; }
 
-  #content article {
-    padding-bottom: 1em; }
-
   #supplementary {
     display: none; }
 
@@ -1130,7 +1129,7 @@ p {
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
-    padding: 0;
+    padding: 0 0 1em 0;
     margin: 0; } }
 
 /*# sourceMappingURL=style.css.map */
