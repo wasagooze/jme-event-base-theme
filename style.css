@@ -130,9 +130,9 @@ h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
 hr {
-  background-color: #ccc;
+  background-color: black;
   border: 0;
-  height: 1px;
+  height: 2px;
   margin-bottom: 1.625em; }
 
 /* Text elements */
@@ -932,10 +932,6 @@ footer .widget-title {
   text-align: center; }
 
 /* FOR JME Theme */
-p {
-  margin-bottom: 0.8125em;
-  margin-top: 0.8125em; }
-
 .entry-content h1 {
   font-size: 1.75em; }
 
