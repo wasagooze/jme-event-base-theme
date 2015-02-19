@@ -1,9 +1,5 @@
 <?php
 
-// Set the content width based on the theme's design and stylesheet.
-if ( ! isset( $content_width ) )
-	$content_width = 584;
-
 /*
  * Tell WordPress to run jme_event_base_setup() when the 'after_setup_theme' hook is run.
  */
@@ -48,19 +44,6 @@ function jme_event_base_setup() {
 
 }
 endif; // base setup
-
-if ( ! function_exists( 'twentyeleven_continue_reading_link' ) ) :
-/**
- * Return a "Continue Reading" link for excerpts
- *
- * @since Twenty Eleven 1.0
- *
- * @return string The "Continue Reading" HTML link.
- */
-function twentyeleven_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
-}
-endif; // twentyeleven_continue_reading_link
 
 /**
  * Register sidebars and widgetized areas.
@@ -139,4 +122,21 @@ function jme_filter_categories( $query ) {
 
 add_action('pre_get_posts', 'jme_filter_categories');
 
+add_action( 'init', 'create_attraction_post_type' );
+function create_attraction_post_type() {
+  register_post_type( 'attraction',
+    array(
+      'labels' => array(
+        'name' => __( 'Attractions' ),
+        'singular_name' => __( 'Attractions' ),
+        'add_new_item' => __( 'Add New Attraction' )
+      ),
+      'public' => true,
+      'taxonomies' => array('category'),
+      'description' => 'Workshops, Vendors, Performers, etc',
+      'supports' => array('title','editor','thumbnail','custom-fields'),
+      'has_archive' => true,
+    )
+  );
+}
 ?>
