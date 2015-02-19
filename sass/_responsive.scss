@@ -150,6 +150,7 @@
   // one column layout
   #page, #main, #primary {
     display: block;
+    padding: 0;
   }
 
   #secondary {
@@ -180,6 +181,10 @@
     display: none;
   }
 
+  .main-menu ul {
+    padding-left: 0;
+  }
+  
   .main-menu ul a {
     background: #f9f9f9;
     border-bottom: 1px dotted #ddd;
@@ -189,11 +194,18 @@
     height: auto;
   }
 
+  #content .page-header,
   #content .hentry {
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
     padding: 0 0 1em 0;
-    margin: 0;
+    margin: 1em 0;
+  }
+
+  #content .page-header,
+  #content .entry-header {
+    background: transparent;
+    padding-top: 1em;
   }
 }

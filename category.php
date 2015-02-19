@@ -21,9 +21,10 @@ get_header(); ?>
 					?>
 				</header>
 
+				<ul class="category-listing">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
+					<li>
 					<?php
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -32,8 +33,9 @@ get_header(); ?>
 						 */
 						get_template_part( 'content', get_post_format() );
 					?>
-
+					</li>
 				<?php endwhile; ?>
+				</li>
 
 			<?php else : ?>
 

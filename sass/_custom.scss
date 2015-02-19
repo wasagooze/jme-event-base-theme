@@ -1,6 +1,6 @@
 /* FOR JME Theme */
 
-.entry-content h1 {
+h1 {
   font-size: 1.75em;
 }
 .entry-content h2 {
@@ -8,8 +8,11 @@
 }
 
 .entry-content h3 {
-  font-size: 1.5em;  
-  line-height: 1.25em;
+  font-size: 1.5em;
+}
+
+.entry-content h4 {
+  font-size: 1.25em;
 }
 
 #secondary .widget-title {
@@ -22,14 +25,14 @@
   text-align: center;
 }
 
-.page-header {
-  padding-bottom: 1em;
-}
-
 .error404 .widgettitle {
   display: none;
 }
 
 .error404 li {
   list-style-type: none;
+}
+
+.category-archive-meta {
+  padding: 1em 1.625em;
 }
