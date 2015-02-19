@@ -71,7 +71,6 @@ body {
 #primary {
   display: table-cell;
   margin: 0;
-  max-width: 200px;
   vertical-align: top; }
 
 #content {
@@ -711,6 +710,9 @@ video {
   margin: 0;
   padding-left: 1em; }
 
+.main-menu .sub-menu {
+  padding-left: 0; }
+
 .main-menu ul li,
 .show-menu {
   float: left;
@@ -1128,5 +1130,23 @@ footer .widget-title {
     box-shadow: none;
     padding: 0 0 1em 0;
     margin: 0; } }
+div.ss-form-container {
+  font-family: inherit; }
+
+div.ss-required-asterisk {
+  display: none; }
+
+div.ss-form-entry {
+  padding-bottom: 1.5em; }
+
+div.ss-form-entry input[type="text"],
+div.ss-form-entry textarea {
+  width: 100%; }
+
+.ss-q-title {
+  font-weight: bold; }
+
+#ss-form ol {
+  margin-left: 0; }
 
 /*# sourceMappingURL=style.css.map */
