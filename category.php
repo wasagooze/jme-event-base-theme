@@ -3,7 +3,10 @@
  * Template for displaying Attraction Archive pages
  */
 
-$args = array( 'post_type' => 'attraction', 'category_slug' => 'merchant');
+$category_name = get_category(get_query_var('cat'))->slug;
+
+$args = array( 'post_type' => 'attraction', 'category_name' => $category_name);
+
 $query = new WP_Query( $args );
 
 get_header(); ?>
@@ -27,31 +30,22 @@ get_header(); ?>
         <ul class="category-listing">
         <?php /* Start the Loop */ ?>
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-          <li>
-          <?php
-            /*
-             * Include the Post-Format-specific template for the content.
-             * If you want to overload this in a child theme then include a file
-             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-             */
-            get_template_part( 'content', get_post_format() );
-          ?>
+       	 	<a href="<?php the_permalink(); ?>">
+       	 	<?php 
+						if ( has_post_thumbnail() ) {
+							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+						}
+					?>	
+          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url[0]; ?>');">
+          	<?php the_title(); ?>          	
           </li>
+          </a>
         <?php endwhile; ?>
         </li>
 
       <?php else : ?>
 
-        <article id="post-0" class="post no-results not-found">
-          <header class="entry-header">
-            <h1 class="entry-title">Nothing Found</h1>
-          </header><!-- .entry-header -->
-
-          <div class="entry-content">
-            <p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
-            <?php get_search_form(); ?>
-          </div><!-- .entry-content -->
-        </article><!-- #post-0 -->
+        <?php include('404-content.php'); ?>
 
       <?php endif; ?>
 

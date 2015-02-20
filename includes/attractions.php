@@ -1,6 +1,10 @@
 <?php
 
+
+
 add_action( 'init', 'create_attraction_post_type' );
+
+// Create an Attraction post type to contain this information
 function create_attraction_post_type() {
   register_post_type( 'attraction',
     array(
@@ -20,6 +24,7 @@ function create_attraction_post_type() {
 
 add_action('add_meta_boxes', 'attraction_meta_boxes');
 
+// Create meta boxes on Create/Edit Attraction page
 function attraction_meta_boxes() {
   add_meta_box( 
         'attraction_website',
@@ -31,33 +36,60 @@ function attraction_meta_boxes() {
     );
 
    add_meta_box( 
-        'attraction_facebook',
-        __( 'Facebook Page Url', 'jme_event_base_theme' ),
-        'attraction_facebook_meta_box',
-        'attraction',
-        'side',
-        'default'
+      'attraction_facebook',
+      __( 'Facebook Page Url', 'jme_event_base_theme' ),
+      'attraction_facebook_meta_box',
+      'attraction',
+      'side',
+      'default'
     );
 
   add_meta_box( 
-        'attraction_twitter',
-        __( 'Twitter Feed', 'jme_event_base_theme' ),
-        'attraction_twitter_meta_box',
-        'attraction',
-        'side',
-        'default'
-    );
+    'attraction_twitter',
+    __( 'Twitter Feed', 'jme_event_base_theme' ),
+    'attraction_twitter_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_video',
+    __( 'Video Reel', 'jme_event_base_theme' ),
+    'attraction_video_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+  
+  add_meta_box(
+    'attraction_video',
+    __( 'Video Reel', 'jme_event_base_theme' ),
+    'attraction_video_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
 }
 
 function attraction_website_meta_box($object, $box) {
-  attraction_meta_box_helper($object, 'attraction_website', 'Website Url');
+  attraction_meta_box_helper($object, 'attraction_website', 'Website URL');
 }
 
 function attraction_twitter_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_twitter', 'Twitter Handle');
 }
+
 function attraction_facebook_meta_box($object, $box) {
-  attraction_meta_box_helper($object, 'attraction_facebook', 'Facebook Handle');
+  attraction_meta_box_helper($object, 'attraction_facebook', 'Facebook Page URL');
+}
+
+function attraction_tumblr_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_facebook', 'Tumblr Username');
+}
+
+function attraction_video_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_video', 'Video Reel URL');
 }
 
 function attraction_meta_box_helper($object, $id, $label) {
@@ -76,7 +108,10 @@ function attraction_meta_box_helper($object, $id, $label) {
 add_action( 'save_post', 'attraction_save_website_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_facebook_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_twitter_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_tumblr_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_video_meta', 10, 2 );
 
+// Save Attraction Meta
 function attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key) {
 
   /* Verify the nonce before proceeding. */
@@ -130,6 +165,22 @@ function attraction_save_twitter_meta($post_id, $post) {
   /* Get the meta key. */
   $meta_key = 'attraction_twitter';
   $nonce_key = 'attraction_twitter_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_tumblr_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_tumblr';
+  $nonce_key = 'attraction_tubmlr_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_video_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_video';
+  $nonce_key = 'attraction_video_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 

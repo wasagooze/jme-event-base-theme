@@ -5,6 +5,14 @@
 
 get_header(); 
 
+function show_video($video) {
+  $output = '';
+  if ($video) {
+      $output .= "<iframe src='{$video}' frameborder='0' allowfullscreen='allowfullscreen'></iframe>";
+  }
+  return $output;
+}
+
 ?>
 
 		<section id="primary">
@@ -18,6 +26,7 @@ get_header();
               $website = get_post_meta( $id, 'attraction_website', true ); 
               $facebook = get_post_meta( $id, 'attraction_facebook', true ); 
               $twitter = get_post_meta( $id, 'attraction_twitter', true);
+              $video = get_post_meta( $id, 'attraction_video', true);
             ?>
 					  <article id="post-<?php echo $id; ?>" <?php post_class(); ?>>
 
@@ -37,6 +46,8 @@ get_header();
 
               <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
+              <?php echo show_video($video); ?>
+
               <ul class="social">
                 <?php if ( $website != '') : ?>
                   <li><a href="<?php echo $website; ?>" class="web" rel="me" target="_blank">Offical Website</a></li>
@@ -45,7 +56,7 @@ get_header();
                   <li><a href="http://twitter.com/<?php echo $twitter; ?>" class="tw" rel="me" target="_blank">Twitter</a></li>
                 <?php endif; ?>
                 <?php if ( $facebook != '') : ?>
-                  <li><a href="http://www.facebook.com/<?php echo $facebook; ?>" class="fb" rel="me" target="_blank">Facebook</a></li>
+                  <li><a href="<?php echo $facebook; ?>" class="fb" rel="me" target="_blank">Facebook</a></li>
                 <?php endif; ?>
              </ul>
              

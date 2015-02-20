@@ -31,16 +31,7 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title">Nothing Found</h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+				<?php include('404-content.php'); ?>
 
 			<?php endif; ?>
 
