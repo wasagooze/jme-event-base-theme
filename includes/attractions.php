@@ -54,9 +54,9 @@ function attraction_meta_boxes() {
   );
 
   add_meta_box(
-    'attraction_video',
-    __( 'Video Reel', 'jme_event_base_theme' ),
-    'attraction_video_meta_box',
+    'attraction_tumblr',
+    __( 'Tumblr Username', 'jme_event_base_theme' ),
+    'attraction_tumblr_meta_box',
     'attraction',
     'side',
     'default'
