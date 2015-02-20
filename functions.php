@@ -122,21 +122,8 @@ function jme_filter_categories( $query ) {
 
 add_action('pre_get_posts', 'jme_filter_categories');
 
-add_action( 'init', 'create_attraction_post_type' );
-function create_attraction_post_type() {
-  register_post_type( 'attraction',
-    array(
-      'labels' => array(
-        'name' => __( 'Attractions' ),
-        'singular_name' => __( 'Attractions' ),
-        'add_new_item' => __( 'Add New Attraction' )
-      ),
-      'public' => true,
-      'taxonomies' => array('category'),
-      'description' => 'Workshops, Vendors, Performers, etc',
-      'supports' => array('title','editor','thumbnail','custom-fields'),
-      'has_archive' => true,
-    )
-  );
-}
+
+
+require_once('includes/attractions.php');
+
 ?>

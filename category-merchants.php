@@ -27,9 +27,16 @@ get_header(); ?>
         <ul class="category-listing">
         <?php /* Start the Loop */ ?>
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-          <li>
-          	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+       	 	<a href="<?php the_permalink(); ?>">
+       	 	<?php 
+						if ( has_post_thumbnail() ) {
+							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+						}
+					?>	
+          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url[0]; ?>');">
+          	<?php the_title(); ?>          	
           </li>
+          </a>
         <?php endwhile; ?>
         </li>
 
