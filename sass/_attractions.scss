@@ -7,16 +7,16 @@
   margin: 0;
 }
 
-.attraction ul li {
+.attraction .links li {
   display: inline-block;
   padding: 0 0.25em 0 0;
 }
 
-.attraction ul li:after {
+.attraction .links li:after {
   content: ' | ';
 }
 
-.attraction ul li:last-child:after {
+.attraction .links li:last-child:after {
   content: '';
 }
 

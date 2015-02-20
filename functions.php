@@ -122,8 +122,6 @@ function jme_filter_categories( $query ) {
 
 add_action('pre_get_posts', 'jme_filter_categories');
 
-
-
 require_once('includes/attractions.php');
 
 ?>

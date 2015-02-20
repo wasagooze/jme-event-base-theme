@@ -30,6 +30,15 @@ function attraction_meta_boxes() {
         'default'
     );
 
+   add_meta_box( 
+        'attraction_facebook',
+        __( 'Facebook Page Url', 'jme_event_base_theme' ),
+        'attraction_facebook_meta_box',
+        'attraction',
+        'side',
+        'default'
+    );
+
   add_meta_box( 
         'attraction_twitter',
         __( 'Twitter Feed', 'jme_event_base_theme' ),
@@ -40,34 +49,32 @@ function attraction_meta_boxes() {
     );
 }
 
-function attraction_website_meta_box($object, $box) { 
-
-  wp_nonce_field( basename( __FILE__ ), 'attraction_website_nonce' ); 
-
-  $value = esc_attr( get_post_meta( $object->ID, 'attraction_website', true ) );
-  echo '<p>';
-  echo '<label for="attraction-website">URL to official website</label><br />';
-  echo '<input placeholder="http://" class="widefat" type="url" name="attraction-website" id="attraction-website" value="' . $value . '"';
-  echo '</p>';
-
+function attraction_website_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_website', 'Website Url');
 }
 
-function attraction_twitter_meta_box() {
+function attraction_twitter_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_twitter', 'Twitter Handle');
+}
+function attraction_facebook_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_facebook', 'Facebook Handle');
+}
 
-  wp_nonce_field( basename( __FILE__ ), 'attraction_twitter_nonce' );
+function attraction_meta_box_helper($object, $id, $label) {
+  wp_nonce_field( basename( __FILE__ ), $id . '_nonce' );
 
+  $value = esc_attr( get_post_meta( $object->ID, $id, true ) ); 
 
-  $value = esc_attr( get_post_meta( $object->ID, 'attraction_twitter', true ) ); 
   echo '<p>';
-  echo '<label for="attraction-twitter">Twitter Handle</label>';
+  echo '<label for="' . $id . '">' . $label . '</label>';
   echo '<br />';
-  echo '<input class="widefat" type="text" name="attraction-twitter" id="attraction-twitter" value="' . $value . '" />';
+  echo '<input class="widefat" type="text" name="' . $id . '" id="' . $id . '" value="' . $value . '" />';
   echo '</p>';
-
 }
 
 /* Save post meta on the 'save_post' hook. */
 add_action( 'save_post', 'attraction_save_website_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_facebook_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_twitter_meta', 10, 2 );
 
 function attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key) {
@@ -84,8 +91,7 @@ function attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key) {
     return $post_id;
 
   /* Get the posted data and sanitize it for use as an HTML class. */
-  $new_meta_value = ( isset( $_POST[$meta_key] ) ? sanitize_html_class( $_POST[$meta_key] ) : '' );
-
+  $new_meta_value = ( isset( $_POST[$meta_key] ) ? $_POST[$meta_key] : '' );
 
   /* Get the meta value of the custom field key. */
   $meta_value = get_post_meta( $post_id, $meta_key, true );
@@ -108,6 +114,14 @@ function attraction_save_website_meta($post_id, $post) {
   /* Get the meta key. */
   $meta_key = 'attraction_website';
   $nonce_key = 'attraction_website_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_facebook_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_facebook';
+  $nonce_key = 'attraction_facebook_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 

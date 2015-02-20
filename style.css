@@ -1121,14 +1121,14 @@ div.ss-form-entry textarea {
   list-style: none;
   margin: 0; }
 
-.attraction ul li {
+.attraction .links li {
   display: inline-block;
   padding: 0 0.25em 0 0; }
 
-.attraction ul li:after {
+.attraction .links li:after {
   content: ' | '; }
 
-.attraction ul li:last-child:after {
+.attraction .links li:last-child:after {
   content: ''; }
 
 .attraction img {
@@ -1160,5 +1160,62 @@ div.ss-form-entry textarea {
   width: 28%; }
   .attraction-thumbnail:hover {
     opacity: 1; }
+
+/* Social Icons
+------------------------------------------------------------ */
+.social {
+  margin: 0; }
+
+.social li {
+  float: left;
+  border-bottom: none !important;
+  list-style-type: none !important;
+  padding-right: 0.5em; }
+
+.social li a {
+  display: inline-block;
+  height: 23px;
+  width: 23px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("images/social/social-icons.png"); }
+
+.social .web {
+  background: #777;
+  color: white;
+  text-indent: 0;
+  width: auto;
+  padding: 0 1em;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.social .web:hover {
+  background: #333; }
+  .social .web:hover a:hover {
+    text-decoration: none; }
+
+.social .tw {
+  background-position: 0 0; }
+
+.social .tw:hover {
+  background-position: 0 -23px; }
+
+.social .fb {
+  background-position: -23px 0; }
+
+.social .fb:hover {
+  background-position: -23px -23px; }
+
+.social .rss {
+  background-position: -46px 0; }
+
+.social .rss:hover {
+  background-position: -46px -23px; }
+
+.social .plus {
+  background-position: -69px 0; }
+
+.social .plus:hover {
+  background-position: -69px -69px; }
 
 /*# sourceMappingURL=style.css.map */
