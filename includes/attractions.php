@@ -93,7 +93,7 @@ function attraction_facebook_meta_box($object, $box) {
 }
 
 function attraction_tumblr_meta_box($object, $box) {
-  attraction_meta_box_helper($object, 'attraction_facebook', 'Tumblr Username');
+  attraction_meta_box_helper($object, 'attraction_tumblr', 'Tumblr Username');
 }
 
 function attraction_video_meta_box($object, $box) {
