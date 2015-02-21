@@ -17,8 +17,14 @@
     </div><!-- .entry-summary -->
     <?php else : ?>
     <div class="entry-content">
+      <?php if (get_post_type(get_the_ID()) == 'attraction') : ?>
+        <?php get_template_part( 'content-attraction', get_post_format() ); ?>
+      <?php else: ?>
+
       <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
       <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'jme-event-base-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
+
+      <?php endif; ?>
     </div><!-- .entry-content -->
     <?php endif; ?>
 

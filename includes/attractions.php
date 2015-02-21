@@ -1,6 +1,14 @@
 <?php
 
 
+add_action( 'pre_get_posts', 'add_attractions_to_query' );
+
+// Category pages display Attractions too
+function add_attractions_to_query( $query ) {
+  if ( is_category() && $query->is_main_query() )
+    $query->set( 'post_type', array( 'post', 'attraction') );
+  return $query;
+}
 
 add_action( 'init', 'create_attraction_post_type' );
 
