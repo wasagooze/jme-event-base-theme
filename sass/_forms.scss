@@ -10,6 +10,11 @@ div.ss-form-entry {
   padding-bottom: 1.5em;
 }
 
+div.ss-form-desc {
+  font-style: oblique;
+  padding-bottom: 1em;
+}
+
 div.ss-form-entry input[type="text"], 
 div.ss-form-entry textarea {  
   width: 100%;
@@ -21,6 +26,12 @@ div.ss-form-entry textarea {
 
 #ss-form ol {
   margin-left: 0;
+}
+
+.ss-form .entry-content table,
+.ss-form .entry-content td {
+  border-top-width: 0;
+  border-bottom-width: 0;
 }
 
 
