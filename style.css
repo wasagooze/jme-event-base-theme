@@ -1204,4 +1204,10 @@ div.ss-form-entry textarea {
 .social .plus:hover {
   background-position: -69px -69px; }
 
+.attraction .social li {
+  padding-right: 0.5em; }
+
+.attraction .social li:after {
+  content: ''; }
+
 /*# sourceMappingURL=style.css.map */
