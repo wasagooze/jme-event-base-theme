@@ -8,7 +8,7 @@ body {
 }
 
 #page {
-  box-shadow: 0 6px 6px 6px black;
+  @box-shadow(0, 6px, 6px, black);
   display: table;
   margin: 0 auto;
   max-width: 1000px;

@@ -100,22 +100,20 @@
 
 @media screen and (min-width: 761px) {
   .main-menu ul ul {
-    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    @box-shadow(0, 3px, 3px, rgba(0, 0, 0, 0.2));
     display: none;
     float: left;
     margin: 0;
     position: absolute;
-    top: 3.333em;
-    left: 0;
     width: 188px;
     z-index: 99999;
   }
+
   .main-menu ul ul ul {
     left: 100%;
     top: 0;
   }
+
   .main-menu ul ul a {
     background: #f9f9f9;
     border-bottom: 1px dotted #ddd;
@@ -127,23 +125,23 @@
     padding: 10px 10px;
     width: 168px;
   }
+
   .main-menu li:hover > a,
   .main-menu ul ul :hover > a,
   .main-menu a:focus {
     background: #efefef;
   }
+
   .main-menu li:hover > a,
   .main-menu a:focus {
-    background: #f9f9f9; /* Show a solid color for older browsers */
-    background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
-    background: -o-linear-gradient(#f9f9f9, #e5e5e5);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
-    background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
+    @gradient(#f9f9f9, #e5e5e5);
     color: #373737;
   }
+
   .main-menu ul li:hover > ul {
     display: block;
   }
+
 }
 @media screen and (max-width: 760px) {
 

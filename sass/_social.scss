@@ -6,29 +6,29 @@
 }
 
 .social li {
-  float: left;
   border-bottom: none !important;
+  float: left;
   list-style-type: none !important;
   padding-right: 0.5em;
 }
  
 .social li a {
+  background: url('images/social/social-icons.png');
   display: inline-block;
   height: 23px;
-  width: 23px;
   text-indent: -9999px;
   overflow: hidden;
-  background: url('images/social/social-icons.png');
+  width: 23px;
 }
  
 .social .web {
   background: #777;
   color: white;
-  text-indent: 0;
-  width: auto;
-  padding: 0 1em;
-  text-transform: uppercase;
   font-weight: bold;
+  padding: 0 1em;
+  text-indent: 0;  
+  text-transform: uppercase;
+  width: auto;
 }
 
 .social .web:hover {

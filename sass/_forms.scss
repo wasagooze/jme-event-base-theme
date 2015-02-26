@@ -1,3 +1,52 @@
+/* Forms */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+textarea {
+  @box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.1), true);
+  background: #fafafa;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=number]:focus,
+textarea:focus {
+  color: #373737;
+}
+
+textarea {
+  padding-left: 3px;
+  width: 98%;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number] {
+  padding: 3px;
+}
+
+input#s {
+  background: url(images/search.png) no-repeat 5px 6px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 14px;
+  height: 22px;
+  line-height: 1.2em;
+  padding: 4px 10px 4px 28px;
+}
+
+input#searchsubmit {
+  display: none;
+}
+
 div.ss-form-container {
   font-family: inherit;
 }

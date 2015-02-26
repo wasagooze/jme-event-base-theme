@@ -8,11 +8,13 @@ body, input, textarea {
   font-family: Open Sans, Helvetica, Arial, sans-serif;
   font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.625;
+  line-height: 1.625em;
 }
+
 body {
   background: #e2e2e2;
 }
+
 #page {
   background: transparent;
 }
@@ -126,57 +128,12 @@ small {
   font-size: smaller;
 }
 
-/* Forms */
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=number],
-textarea {
-  background: #fafafa;
-  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-  border: 1px solid #ddd;
-  color: #888;
-}
-input[type=text]:focus,
-input[type=password]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=number]:focus,
-textarea:focus {
-  color: #373737;
-}
-textarea {
-  padding-left: 3px;
-  width: 98%;
-}
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=number] {
-  padding: 3px;
-}
-input#s {
-  background: url(images/search.png) no-repeat 5px 6px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  font-size: 14px;
-  height: 22px;
-  line-height: 1.2em;
-  padding: 4px 10px 4px 28px;
-}
-input#searchsubmit {
-  display: none;
-}
-
 /* Links */
 a {
   color: #1982d1;
   text-decoration: none;
 }
+
 a:focus,
 a:active,
 a:hover {
@@ -189,6 +146,7 @@ a:hover {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
+
 #access a.assistive-text:focus {
   background: #eee;
   border-bottom: 1px solid #ddd;
