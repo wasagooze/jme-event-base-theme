@@ -1047,6 +1047,24 @@ div.ss-form-entry textarea {
 .social .plus:hover {
   background-position: -69px -69px; }
 
+.social .tumblr {
+  background-position: 0 -46px; }
+
+.social .tumblr:hover {
+  background-position: 0 -69px; }
+
+.social .etsy {
+  background-position: -23px -46px; }
+
+.social .etsy:hover {
+  background-position: -23px -69px; }
+
+.social .bandcamp {
+  display: none; }
+
+.social .reverb {
+  display: none; }
+
 .attraction .social li {
   padding-right: 0.5em; }
 

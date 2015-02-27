@@ -36,7 +36,7 @@ get_header(); ?>
 							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 						}
 					?>	
-          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url[0]; ?>');">
+          <li class="attraction-thumbnail">
           	<div class="attraction-title"><?php the_title(); ?></div>
           </li>
           </a>
