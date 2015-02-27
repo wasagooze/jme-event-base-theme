@@ -16,6 +16,9 @@
   $facebook = get_post_meta( $id, 'attraction_facebook', true ); 
   $twitter = get_post_meta( $id, 'attraction_twitter', true);
   $tumblr = get_post_meta($id, 'attraction_tumblr', true);
+  $etsy = get_post_meta($id, 'attraction_etsy', true);
+  $bandcamp = get_post_meta($id, 'attraction_bandcamp', true);
+  $reverb = get_post_meta($id, 'attraction_reverbnation', true);
   $video = get_post_meta( $id, 'attraction_video', true);
 ?>
         <section class="attraction">
@@ -31,7 +34,16 @@
               <li><a href="http://twitter.com/<?php echo $twitter; ?>" class="tw" rel="me" target="_blank">Twitter</a></li>
             <?php endif; ?>
             <?php if ( $tumblr != '') : ?>
-              <li><a href="http://<?php echo $tumblr; ?>.tumblr.com/" class="tumblr" rel="me" target="_blank">Twitter</a></li>
+              <li><a href="http://<?php echo $tumblr; ?>.tumblr.com/" class="tumblr" rel="me" target="_blank">Tumblr</a></li>
+            <?php endif; ?>
+            <?php if ( $etsy != '') : ?>
+              <li><a href="<?php echo $etsy; ?>" class="etsy" rel="me" target="_blank">Etsy</a></li>
+            <?php endif; ?>
+            <?php if ( $bandcamp != '') : ?>
+              <li><a href="<?php echo $bandcamp; ?>" class="bandcamp" rel="me" target="_blank">Bandcamp</a></li>
+            <?php endif; ?>
+            <?php if ( $reverb != '') : ?>
+              <li><a href="<?php echo $reverb; ?>" class="reverb" rel="me" target="_blank">ReverbNation</a></li>
             <?php endif; ?>
          </ul>
 

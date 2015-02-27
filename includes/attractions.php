@@ -69,6 +69,33 @@ function attraction_meta_boxes() {
     'side',
     'default'
   );
+
+  add_meta_box(
+    'attraction_etsy',
+    __( 'Etsy Url', 'jme_event_base_theme' ),
+    'attraction_etsy_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_bandcamp',
+    __( 'Bandcamp Url', 'jme_event_base_theme' ),
+    'attraction_bandcamp_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_reverbnation',
+    __( 'Reverbnation Url', 'jme_event_base_theme' ),
+    'attraction_reverbnation_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
   
   add_meta_box(
     'attraction_video',
@@ -96,6 +123,18 @@ function attraction_tumblr_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_tumblr', 'Tumblr Username');
 }
 
+function attraction_etsy_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_etsy', 'Etsy URL');
+}
+
+function attraction_bandcamp_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_bandcamp', 'Bandcamp URL');
+}
+
+function attraction_reverbnation_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_reverbnation', 'Reverbnation URL');
+}
+
 function attraction_video_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_video', 'Video Reel URL');
 }
@@ -117,6 +156,9 @@ add_action( 'save_post', 'attraction_save_website_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_facebook_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_twitter_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_tumblr_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_etsy_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_bandcamp_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_reverbnation_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_video_meta', 10, 2 );
 
 // Save Attraction Meta
@@ -180,10 +222,33 @@ function attraction_save_tumblr_meta($post_id, $post) {
 
   /* Get the meta key. */
   $meta_key = 'attraction_tumblr';
-  $nonce_key = 'attraction_tubmlr_nonce';
+  $nonce_key = 'attraction_tumblr_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 
+function attraction_save_etsy_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_etsy';
+  $nonce_key = 'attraction_etsy_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_bandcamp_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_bandcamp';
+  $nonce_key = 'attraction_bandcamp_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_reverbnation_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_reverbnation';
+  $nonce_key = 'attraction_reverbnation_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
 function attraction_save_video_meta($post_id, $post) {
 
   /* Get the meta key. */
