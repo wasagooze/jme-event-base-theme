@@ -40,7 +40,7 @@
 	<div class="copyright">
 		<?php if (is_active_sidebar('footer-copyright')) { dynamic_sidebar( 'footer-copyright'); } ?>
 		
-		<?php get_template_part( 'footer-social', get_post_format() ); ?>
+		<?php get_template_part( 'website-social', get_post_format() ); ?>
  	</div>
 
 	</footer><!-- #colophon -->
