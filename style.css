@@ -845,7 +845,7 @@ h1 {
 #secondary .widget-title {
   display: none; }
 
-#copyright {
+.copyright {
   font-size: 13px;
   padding: 0.5em 1em;
   text-align: center; }
@@ -1067,6 +1067,10 @@ div.ss-form-entry textarea {
 
 .attraction .social li {
   padding-right: 0.5em; }
+
+footer .social {
+  display: inline-block;
+  text-align: center; }
 
 .attraction .social li:after {
   content: ''; }

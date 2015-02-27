@@ -120,6 +120,18 @@ function jme_filter_categories( $query ) {
   }
 }
 
+function jme_get_facebook() {
+  return '';
+}
+
+function jme_get_twitter() {
+  return '';
+}
+
+function jme_get_tumblr() {
+  return '';
+}
+
 add_action('pre_get_posts', 'jme_filter_categories');
 
 require_once('includes/attractions.php');
