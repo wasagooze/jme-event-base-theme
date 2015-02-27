@@ -33,10 +33,10 @@ get_header(); ?>
        	 	<a href="<?php the_permalink(); ?>">
        	 	<?php 
 						if ( has_post_thumbnail() ) {
-							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0];
 						}
 					?>	
-          <li class="attraction-thumbnail">
+          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>')">
           	<div class="attraction-title"><?php the_title(); ?></div>
           </li>
           </a>
