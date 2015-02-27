@@ -22,7 +22,7 @@ function create_attraction_post_type() {
         'add_new_item' => __( 'Add New Attraction' )
       ),
       'public' => true,
-      'taxonomies' => array('category'),
+      'taxonomies' => array('category', 'post_tag'),
       'description' => 'Workshops, Vendors, Performers, etc',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,
