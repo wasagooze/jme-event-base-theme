@@ -5,7 +5,7 @@
 
 $category_name = get_category(get_query_var('cat'))->slug;
 
-$args = array( 'post_type' => 'attraction', 'category_name' => $category_name);
+$args = array( 'post_type' => 'any', 'category_name' => $category_name);
 
 $query = new WP_Query( $args );
 
@@ -37,7 +37,7 @@ get_header(); ?>
 						}
 					?>	
           <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url[0]; ?>');">
-          	<?php the_title(); ?>          	
+          	<div class="attraction-title"><?php the_title(); ?></div>
           </li>
           </a>
         <?php endwhile; ?>
