@@ -24,7 +24,7 @@
       <div class="entry-content">
 
         <section class="attraction">
-    
+  
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
           <?php if (is_single() && $video !== ''): ?>

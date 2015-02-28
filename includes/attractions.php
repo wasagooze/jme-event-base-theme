@@ -34,6 +34,16 @@ add_action('add_meta_boxes', 'attraction_meta_boxes');
 
 // Create meta boxes on Create/Edit Attraction page
 function attraction_meta_boxes() {
+
+  add_meta_box( 
+        'attraction_subhead',
+        __( 'Subheading', 'jme_event_base_theme' ),
+        'attraction_subhead_meta_box',
+        'attraction',
+        'side',
+        'default'
+    );
+
   add_meta_box( 
         'attraction_website',
         __( 'Website', 'jme_event_base_theme' ),
@@ -107,6 +117,10 @@ function attraction_meta_boxes() {
   );
 }
 
+function attraction_subhead_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_subhead', 'Attraction Subheading');
+}
+
 function attraction_website_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_website', 'Website URL');
 }
@@ -152,6 +166,7 @@ function attraction_meta_box_helper($object, $id, $label) {
 }
 
 /* Save post meta on the 'save_post' hook. */
+add_action( 'save_post', 'attraction_save_subhead_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_website_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_facebook_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_twitter_meta', 10, 2 );
@@ -192,6 +207,15 @@ function attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key) {
   /* If there is no new meta value but an old value exists, delete it. */
   elseif ( '' == $new_meta_value && $meta_value )
     delete_post_meta( $post_id, $meta_key, $meta_value );
+}
+
+
+function attraction_save_subhead_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_subhead';
+  $nonce_key = 'attraction_subhead_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 
 function attraction_save_website_meta($post_id, $post) {

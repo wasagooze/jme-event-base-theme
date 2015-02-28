@@ -40,33 +40,56 @@
 
 .attraction-thumbnail {
   @box-shadow(3px, 3px, 3px, #222);
+  border-radius: 6px;
   background: #666;
   background-size: 100% 100%;
-  border-radius: 10px;
   display: inline-block;
   font-size: 1.25em;
   font-weight: bold;
-  height: 9em;
+  height: 10em;
   margin: 0 1% 1% 0;
   opacity: 0.7;
   overflow: hidden;
-  padding: 1em 0.5em;
-  width: 27%;
-  &:hover {
-    opacity: 1;
-  }
+  position: relative;
+  width: 10em;
 }
 
 .attraction-thumbnail:nth-child(3n+3) {
   margin-right: 0;
 }
 
-.attraction-title {
+.attraction-thumbnail .background {
+  background-size: auto auto;
+  background-position: center center;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.attraction-title,
+.attraction-subhead {
   color: white;
-  font-size: 1.25em;
-  line-height: 125%;
-  padding: 1em 0.25em;
   text-align: center;
   text-shadow: 1px 2px 2px black;
   text-transform: uppercase;
+  
+}
+
+.attraction-title {
+  padding: 1em 0.5em 0 0.5em;
+  font-size: 1.125em;
+  line-height: 125%;
+}
+
+.attraction-subhead {
+  font-size: 0.9em;
 }

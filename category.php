@@ -31,14 +31,15 @@ get_header(); ?>
         <?php /* Start the Loop */ ?>
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
        	 	<a href="<?php the_permalink(); ?>">
-       	 	<?php 
+            <?php 
             $large_image_url = '';
-						if ( has_post_thumbnail() ) {
-							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0];
-						} 
-					?>	
-          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>')">
-          	<div class="attraction-title"><?php the_title(); ?></div>
+            if ( has_post_thumbnail() ) {
+              $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0];
+            }
+          ?>  
+          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>');">
+            <div class="attraction-title"><?php the_title(); ?></div>
+            <div class="attraction-subhead"><?php echo get_post_meta(get_the_ID(), 'attraction_subhead', true ); ?></div>
           </li>
           </a>
         <?php endwhile; ?>
