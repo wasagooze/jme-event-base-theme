@@ -41,5 +41,8 @@
 
     <footer class="entry-meta">
       <?php edit_post_link( __( 'Edit', 'jme-event-base-theme' ), '<span class="edit-link">', '</span>' ); ?>
+      
+      <div class="fb-like" data-href="<?php the_permalink(); ?>" data-width="200px" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+      
     </footer><!-- .entry-meta -->
   </article><!-- #post-<?php the_ID(); ?> -->

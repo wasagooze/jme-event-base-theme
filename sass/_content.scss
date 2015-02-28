@@ -118,6 +118,11 @@ dl.gallery-item {
 
 // Entry Footer
 
+.entry-meta .edit-link {
+  display: block;
+  padding: 0 0 1em 0;
+}
+
 .entry-meta .edit-link a {
   background: #eee;
   -moz-border-radius: 3px;
