@@ -34,7 +34,7 @@ get_header(); ?>
             <?php 
             $large_image_url = '';
             if ( has_post_thumbnail() ) {
-              $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0];
+              $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' )[0];
             }
           ?>  
           <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>');">
