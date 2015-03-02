@@ -5,7 +5,7 @@
 
 $category_name = get_category(get_query_var('cat'))->slug;
 
-$args = array( 'post_type' => 'any', 'category_name' => $category_name);
+$args = array( 'post_type' => 'any', 'category_name' => $category_name, 'nopaging' => true, 'orderby' => 'name', 'order' => 'ASC');
 
 $query = new WP_Query( $args );
 
