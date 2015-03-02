@@ -1,57 +1,58 @@
 <?php
 /**
- * Template for displaying Category Archive pages
+ * Template for displaying Attraction Archive pages
  */
+
+$category_name = get_category(get_query_var('cat'))->slug;
+
+$args = array( 'post_type' => 'any', 'category_name' => $category_name, 'nopaging' => true, 'orderby' => 'name', 'order' => 'ASC');
+
+$query = new WP_Query( $args );
 
 get_header(); ?>
 
-		<section id="primary">
-			<div id="content" role="main">
+    <section id="primary">
+      <div id="content" role="main">
 
-			<?php if ( have_posts() ) : ?>
+      <?php if ( $query->have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
+        <header class="page-header">
+          <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
 
-					<?php
-						$category_description = category_description();
-						if ( ! empty( $category_description ) ) {
-							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-						}
-					?>
-				</header>
+          <?php
+            $category_description = category_description();
+            if ( ! empty( $category_description ) ) {
+              echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+            }
+          ?>
+        </header>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+        <ul class="category-listing">
+        <?php /* Start the Loop */ ?>
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+       	 	<a href="<?php the_permalink(); ?>">
+            <?php 
+            $large_image_url = '';
+            if ( has_post_thumbnail() ) {
+              $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' )[0];
+            }
+          ?>  
+          <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>');">
+            <div class="attraction-title"><?php the_title(); ?></div>
+            <div class="attraction-subhead"><?php echo get_post_meta(get_the_ID(), 'attraction_subhead', true ); ?></div>
+          </li>
+          </a>
+        <?php endwhile; ?>
+        </li>
 
-					<?php
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-					?>
+      <?php else : ?>
 
-				<?php endwhile; ?>
+        <?php include('404-content.php'); ?>
 
-			<?php else : ?>
+      <?php endif; ?>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title">Nothing Found</h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
-
-			<?php endif; ?>
-
-			</div><!-- #content -->
-		</section><!-- #primary -->
+      </div><!-- #content -->
+    </section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

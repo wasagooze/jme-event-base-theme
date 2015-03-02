@@ -14,7 +14,7 @@
 
 		<div id="first" class="widget-area" role="complementary">
 			<?php 
-			if(is_active_sidebar('footer-sidebar-1')){
+			if (is_active_sidebar('footer-sidebar-1')){
 				dynamic_sidebar('footer-sidebar-1');
 			}
 			?>
@@ -22,7 +22,7 @@
 
 			<div id="second" class="widget-area" role="complementary">
 			<?php 
-			if(is_active_sidebar('footer-sidebar-2')){
+			if (is_active_sidebar('footer-sidebar-2')){
 				dynamic_sidebar('footer-sidebar-2');
 			}
 			?>
@@ -30,15 +30,19 @@
 			
 		<div id="third" class="widget-area" role="complementary">
 			<?php 
-			if(is_active_sidebar('footer-sidebar-3')){
+			if (is_active_sidebar('footer-sidebar-3')){
 				dynamic_sidebar('footer-sidebar-3');
 			}
 			?>
 		</div><!-- #third .widget-area -->
 	</div>
-	<div id="copyright">
+
+	<div class="copyright">
 		<?php if (is_active_sidebar('footer-copyright')) { dynamic_sidebar( 'footer-copyright'); } ?>
-	</div>
+		
+		<?php get_template_part( 'website-social', get_post_format() ); ?>
+ 	</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

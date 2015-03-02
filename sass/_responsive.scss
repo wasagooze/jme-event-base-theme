@@ -26,7 +26,6 @@
     width: 100%;
     overflow: hidden;
   }
-
 }
 
 @media (max-width: 650px) {
@@ -205,5 +204,23 @@
   #content .entry-header {
     background: transparent;
     padding-top: 1em;
+  }
+
+  // attractions for responsive
+  .attraction-thumbnail {
+    background-image: none !important;
+    display: block;
+    height: 3em;
+    margin: 0.5em auto;
+    padding: 0;
+    width: 90%;
+  }
+
+  .attraction-thumbnail .background {
+    display: none;
+  }
+  
+  .attraction-title {
+    padding: 0.25em;
   }
 }

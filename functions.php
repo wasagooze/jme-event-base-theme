@@ -107,21 +107,6 @@ function jme_widgets_init() {
 }
 add_action( 'widgets_init', 'jme_widgets_init' );
 
-function jme_filter_categories( $query ) {
-
-  // Don't show anything besides announcements on home page
-  if ($query->is_home() && $query->is_main_query()) {
-    $category = get_category_by_slug('announcements')->term_id;
-    $query->set('cat', $category);
-  } else {
-    $query->set('orderby', 'name');
-    $query->set('order', 'ASC');
-    $query->set('nopaging', 'true');
-  }
-}
-
-add_action('pre_get_posts', 'jme_filter_categories');
-
 require_once('includes/attractions.php');
 
 ?>
