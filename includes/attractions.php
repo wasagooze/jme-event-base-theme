@@ -133,6 +133,15 @@ function attraction_meta_boxes() {
     'side',
     'default'
   );
+
+  add_meta_box(
+    'attraction_instagram',
+    __( 'Instagram Url', 'jme_event_base_theme' ),
+    'attraction_instagram_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
   
   add_meta_box(
     'attraction_video',
@@ -184,6 +193,10 @@ function attraction_deviantart_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_deviantart', 'DeviantArt URL');
 }
 
+function attraction_instagram_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_instagram', 'Instagram URL');
+}
+
 function attraction_video_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_video', 'Video Reel URL');
 }
@@ -211,6 +224,7 @@ add_action( 'save_post', 'attraction_save_bandcamp_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_reverbnation_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_deviantart_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_pinterest_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_instagram_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_video_meta', 10, 2 );
 
 // Save Attraction Meta
@@ -324,6 +338,14 @@ function attraction_save_pinterest_meta($post_id, $post) {
   /* Get the meta key. */
   $meta_key = 'attraction_pinterest';
   $nonce_key = 'attraction_pinterest_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_instagram_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_instagram';
+  $nonce_key = 'attraction_instagram_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 
