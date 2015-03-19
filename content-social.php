@@ -13,6 +13,7 @@
   $pinterest = get_post_meta($id, 'attraction_pinterest', true);
   $deviantart = get_post_meta($id, 'attraction_deviantart', true);
   $instagram = get_post_meta($id, 'attraction_instagram', true);
+  $soundcloud = get_post_meta($id, 'attraction_soundcloud', true);
 ?>
 
 <ul class="social">
@@ -43,7 +44,10 @@
   <?php if ( $deviantart != '') : ?>
     <li><a href="<?php echo $deviantart; ?>" class="deviantart" rel="me" target="_blank">DeviantArt</a></li>
   <?php endif; ?>
-   <?php if ( $instagram != '') : ?>
+  <?php if ( $instagram != '') : ?>
     <li><a href="<?php echo $instagram; ?>" class="instagram" rel="me" target="_blank">Instagram</a></li>
+  <?php endif; ?>
+  <?php if ( $soundcloud != '') : ?>
+    <li><a href="<?php echo $soundcloud; ?>" class="soundcloud" rel="me" target="_blank">Soundcloud</a></li>
   <?php endif; ?>
 </ul>
