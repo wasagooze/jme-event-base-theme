@@ -8,6 +8,7 @@
 
   $id = get_the_ID();
   $video = get_post_meta( $id, 'attraction_video', true);
+  
 ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

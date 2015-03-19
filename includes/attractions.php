@@ -106,6 +106,33 @@ function attraction_meta_boxes() {
     'side',
     'default'
   );
+
+  add_meta_box(
+    'attraction_reverbnation',
+    __( 'Reverbnation Url', 'jme_event_base_theme' ),
+    'attraction_reverbnation_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_pinterest',
+    __( 'Pinterest Url', 'jme_event_base_theme' ),
+    'attraction_pinterest_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_deviantart',
+    __( 'DeviantArt Url', 'jme_event_base_theme' ),
+    'attraction_deviantart_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
   
   add_meta_box(
     'attraction_video',
@@ -149,6 +176,14 @@ function attraction_reverbnation_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_reverbnation', 'Reverbnation URL');
 }
 
+function attraction_pinterest_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_pinterest', 'Pinterest URL');
+}
+
+function attraction_deviantart_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_deviantart', 'DeviantArt URL');
+}
+
 function attraction_video_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_video', 'Video Reel URL');
 }
@@ -174,6 +209,8 @@ add_action( 'save_post', 'attraction_save_tumblr_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_etsy_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_bandcamp_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_reverbnation_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_deviantart_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_pinterest_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_video_meta', 10, 2 );
 
 // Save Attraction Meta
@@ -273,6 +310,23 @@ function attraction_save_reverbnation_meta($post_id, $post) {
   $nonce_key = 'attraction_reverbnation_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
+
+function attraction_save_deviantart_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_deviantart';
+  $nonce_key = 'attraction_deviantart_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_pinterest_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_pinterest';
+  $nonce_key = 'attraction_pinterest_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
 function attraction_save_video_meta($post_id, $post) {
 
   /* Get the meta key. */

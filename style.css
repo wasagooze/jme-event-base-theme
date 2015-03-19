@@ -1072,6 +1072,18 @@ div.ss-form-entry textarea {
 .social .plus:hover {
   background-position: -69px -69px; }
 
+.social .reverb {
+  background-position: -91px 0; }
+
+.social .reverb:hover {
+  background-position: -91px -23px; }
+
+.social .pinterest {
+  background-position: -114px 0; }
+
+.social .pinterest:hover {
+  background-position: -114px -23px; }
+
 .social .tumblr {
   background-position: 0 -46px; }
 
@@ -1085,10 +1097,16 @@ div.ss-form-entry textarea {
   background-position: -23px -69px; }
 
 .social .bandcamp {
-  display: none; }
+  background-position: -46px -46px; }
 
-.social .reverb {
-  display: none; }
+.social .bandcamp:hover {
+  background-position: -46px -69px; }
+
+.social .deviantart {
+  background-position: -69px -46px; }
+
+.social .deviantart:hover {
+  background-position: -69px -69px; }
 
 .attraction .social li {
   padding-right: 0.5em; }

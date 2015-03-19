@@ -10,6 +10,8 @@
   $etsy = get_post_meta($id, 'attraction_etsy', true);
   $bandcamp = get_post_meta($id, 'attraction_bandcamp', true);
   $reverb = get_post_meta($id, 'attraction_reverbnation', true);
+  $pinterest = get_post_meta($id, 'attraction_pinterest', true);
+  $deviantart = get_post_meta($id, 'attraction_deviantart', true);
 ?>
 
 <ul class="social">
@@ -33,5 +35,11 @@
   <?php endif; ?>
   <?php if ( $reverb != '') : ?>
     <li><a href="<?php echo $reverb; ?>" class="reverb" rel="me" target="_blank">ReverbNation</a></li>
+  <?php endif; ?>
+  <?php if ( $pinterest != '') : ?>
+    <li><a href="<?php echo $pinterest; ?>" class="pinterest" rel="me" target="_blank">Pinterest</a></li>
+  <?php endif; ?>
+  <?php if ( $deviantart != '') : ?>
+    <li><a href="<?php echo $deviantart; ?>" class="deviantart" rel="me" target="_blank">DeviantArt</a></li>
   <?php endif; ?>
 </ul>
