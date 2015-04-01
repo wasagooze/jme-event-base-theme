@@ -1,5 +1,3 @@
-
-
 /* =Structure
 ----------------------------------------------- */
 
@@ -8,7 +6,7 @@ body {
 }
 
 #page {
-  @box-shadow(0, 6px, 6px, black);
+  @include box-shadow(0, 6px, 6px, black);
   display: table;
   margin: 0 auto;
   max-width: 1000px;
@@ -29,7 +27,7 @@ body {
   padding-right: 3.25em;
 }
 
-#secondary {
+.secondary {
   display: table-cell;
   margin: 0;
   max-width: 200px;

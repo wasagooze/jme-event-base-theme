@@ -26,13 +26,13 @@
 
         <section class="attraction">
   
+          <?php get_template_part( 'content-social', get_post_format() ); ?>
+
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
           <?php if (is_single() && $video !== ''): ?>
             <iframe src='<?php echo $video; ?>' frameborder='0' allowfullscreen='allowfullscreen'></iframe>
           <?php endif; ?>
-         
-          <?php get_template_part( 'content-social', get_post_format() ); ?>
 
         </section>
 

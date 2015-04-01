@@ -88,7 +88,7 @@ h1 {
   font-weight: bold;
   line-height: 1.5em; }
 
-#secondary .widget-title,
+.secondary .widget-title,
 .error404 .widget-title {
   display: none; }
 
@@ -106,7 +106,9 @@ body {
   padding: 0 2em; }
 
 #page {
-  @box-shadow (0, 6px, 6px, black);
+  -webkit-box-shadow: 0 6px 6px black;
+  -moz-box-shadow: 0 6px 6px black;
+  box-shadow: 0 6px 6px black;
   display: table;
   margin: 0 auto;
   max-width: 1000px;
@@ -123,7 +125,7 @@ body {
 #content {
   padding-right: 3.25em; }
 
-#secondary {
+.secondary {
   display: table-cell;
   margin: 0;
   max-width: 200px;
@@ -1055,9 +1057,12 @@ div.ss-form-entry textarea {
 
 .social li {
   border-bottom: none !important;
-  float: left;
   list-style-type: none !important;
   padding-right: 0.5em; }
+
+aside .social li,
+footer .social li {
+  float: left; }
 
 .social li a {
   background: url("images/social/social-icons.png");
@@ -1288,7 +1293,7 @@ footer .social {
     display: block;
     padding: 0; }
 
-  #secondary {
+  .secondary {
     display: none; }
 
   #content {

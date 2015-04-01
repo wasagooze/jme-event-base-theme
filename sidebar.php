@@ -1,5 +1,5 @@
 
-<div id="secondary" class="widget-area" role="complementary">
+<aside class="secondary" class="widget-area" role="complementary">
 
 <?php get_template_part( 'website-social', get_post_format() ); ?>
 

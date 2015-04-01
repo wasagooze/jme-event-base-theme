@@ -7,11 +7,15 @@
 
 .social li {
   border-bottom: none !important;
-  float: left;
   list-style-type: none !important;
   padding-right: 0.5em;
 }
- 
+
+aside .social li,
+footer .social li {
+  float: left;
+}
+
 .social li a {
   background: url('images/social/social-icons.png');
   display: inline-block;

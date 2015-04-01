@@ -2,12 +2,8 @@
 /**
  * Template for displaying the footer
  *
- * Contains the closing of the id=main div and all content after
- *
  */
 ?>
-
-	</div><!-- #main -->
 
 	<footer id="colophon" role="contentinfo">
 		<div id="supplementary" class="three">
