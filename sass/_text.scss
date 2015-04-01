@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+$font-stack: Open Sans, Helvetica, Arial, sans-serif;
+
+body, input, textarea {
+  color: #373737;
+  font-family: $font-stack;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 1.625em;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+.entry-content h2 {
+  font-weight: bold;
+  font-size: 1.625em;
+  line-height: 2em;
+}
+
+.entry-content h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.75em;
+}
+
+.entry-content h4 {
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+#secondary .widget-title,
+.error404 .widget-title {
+  display: none;
+}
+
+.copyright {
+  font-size: 13px;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.error404 li {
+  list-style-type: none;
+}

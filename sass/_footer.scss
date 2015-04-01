@@ -58,3 +58,18 @@ footer .widget-title {
   text-transform: none;
   text-align: center;
 }
+
+footer .widget a,
+footer .copyright a {
+  color: #6abdc4;
+  font-weight: normal;
+}
+
+footer .widget-title {
+  border-bottom: 1px solid #c7e0d3;
+  color: #c7e0d3;
+}
+
+.copyright {
+  color: #c7e0d3;
+}

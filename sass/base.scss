@@ -1,6 +1,19 @@
-@import 'mixins';
+/*
+
+Theme Name: Jeff Mach Event Base Theme
+
+Description: Event theme base. Taken from TwentyEleven.
+
+Author: Cidney Hamilton
+Author URI: http://cidneyhamilton.com
+
+*/
 
 @import 'reset';
+@import 'mixins';
+
+@import 'text';
+
 @import 'structure';
 @import 'global';
 @import 'header';
@@ -10,7 +23,7 @@
 @import 'attachments';
 @import 'widgets';
 @import 'footer';
-@import 'custom';
+
 @import 'attractions';
 @import 'forms';
 @import 'social';
