@@ -7,6 +7,8 @@ Description: Event theme base. Taken from TwentyEleven.
 Author: Cidney Hamilton
 Author URI: http://cidneyhamilton.com
 
+Version: 2.0
+
 */
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
@@ -903,14 +905,14 @@ footer .widget-title {
   list-style: none;
   margin: 0; }
 
-.attraction .links li {
+.attraction ul li {
   display: inline-block;
   padding: 0 0.25em 0 0; }
 
-.attraction .links li:after {
+.attraction ul li:after {
   content: ' | '; }
 
-.attraction .links li:last-child:after {
+.attraction ul li:last-child:after {
   content: ''; }
 
 .attraction img {

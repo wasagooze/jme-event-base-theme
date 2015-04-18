@@ -4,12 +4,29 @@
  *
  */
 
-$args = array( 'post_type' => 'post', 'category_name' => 'blog');
+get_header(); ?>
 
-$query = new WP_Query( $args );
+<div id="primary">
+  <div id="content" role="main">
 
-get_header();
-require_once( 'content-index.php' );
+  <?php if (have_posts() ) : ?>
 
+    <?php /* Start the Loop */ ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+
+      <?php get_template_part( 'content', get_post_format() ); ?>
+
+    <?php endwhile; ?>
+
+  <?php else : ?>
+
+    <?php include('404-content.php'); ?>
+
+  <?php endif; ?>
+</div>
+</div>
+
+<?php
 get_sidebar();
 get_footer(); 
+?>
