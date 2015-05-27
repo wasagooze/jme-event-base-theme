@@ -24,7 +24,15 @@ function jme_event_base_setup() {
   // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
   add_theme_support( 'post-thumbnails' );
 
-  /*
+  $custom_header_support = array(
+      'default-image' => get_stylesheet_directory_uri() . '/images/header.png',
+      'width' => 970,
+      'height' => 470,
+      'uploads' => true,
+
+  );
+
+    /*
    * We'll be using post thumbnails for custom header images on posts and pages.
    * We want them to be the size of the header image that we just defined.
    * Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
@@ -32,15 +40,7 @@ function jme_event_base_setup() {
   set_post_thumbnail_size( $custom_header_support['width'], $custom_header_support['height'], true );
 
 
-  $defaults = array(
-      'default-image' => get_stylesheet_directory_uri() . '/images/header.png',
-      'width' => 930,
-      'height' => 260,
-      'uploads' => true,
-
-  );
-
-  add_theme_support( 'custom-header', $defaults);
+  add_theme_support( 'custom-header', $custom_header_support);
 
 }
 endif; // base setup

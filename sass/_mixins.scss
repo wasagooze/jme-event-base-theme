@@ -17,3 +17,9 @@
   background: -o-linear-gradient($from, $to);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
 }
+
+@mixin border-radius($size)  {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}

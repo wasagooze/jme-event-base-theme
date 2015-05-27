@@ -843,21 +843,6 @@ footer .widget {
   padding: 1.625em 7.6%;
   overflow: hidden; }
 
-/* Two Footer Widget Areas */
-#supplementary.two .widget-area {
-  float: left;
-  margin-right: 3.7%;
-  width: 48.1%; }
-
-#supplementary.two .widget-area + .widget-area {
-  margin-right: 0; }
-
-/* Three Footer Widget Areas */
-#supplementary.three .widget-area {
-  float: left;
-  margin-right: 3.7%;
-  width: 30.85%; }
-
 #supplementary.three .widget-area + .widget-area + .widget-area {
   margin-right: 0; }
 
@@ -988,7 +973,9 @@ input[type=email],
 input[type=url],
 input[type=number],
 textarea {
-  @box-shadow (0, 1px, 1px, rgba(0, 0, 0, 0.1), true);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
   background: #fafafa;
   border: 1px solid #ddd;
   color: #888; }
@@ -1013,9 +1000,10 @@ input[type=number] {
   padding: 3px; }
 
 input#s {
-  background: url(images/search.png) no-repeat 5px 6px;
+  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  background: url(images/search.png) no-repeat 5px 6px;
   font-size: 14px;
   height: 22px;
   line-height: 1.2em;
@@ -1051,6 +1039,29 @@ div.ss-form-entry textarea {
 .ss-form .entry-content td {
   border-top-width: 0;
   border-bottom-width: 0; }
+
+.btn {
+  -webkit-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  border-radius: 0.8em;
+  background: #3498db;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3498db), to(#2980b9));
+  background: -moz-linear-gradient(top, #3498db, #2980b9);
+  background: -o-linear-gradient(#3498db, #2980b9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3498db', endColorstr='#2980b9');
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none; }
+
+.btn:hover {
+  background: #3cb0fd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3cb0fd), to(#3498db));
+  background: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background: -o-linear-gradient(#3cb0fd, #3498db);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3cb0fd', endColorstr='#3498db');
+  text-decoration: none; }
 
 /* Social Icons
 ------------------------------------------------------------ */
@@ -1289,7 +1300,22 @@ footer .social {
     color: #373737; }
 
   .main-menu ul li:hover > ul {
-    display: block; } }
+    display: block; }
+
+  /* Two Footer Widget Areas */
+  #supplementary.two .widget-area {
+    float: left;
+    margin-right: 3.7%;
+    width: 48.1%; }
+
+  #supplementary.two .widget-area + .widget-area {
+    margin-right: 0; }
+
+  /* Three Footer Widget Areas */
+  #supplementary.three .widget-area {
+    float: left;
+    margin-right: 3.7%;
+    width: 30.85%; } }
 @media screen and (max-width: 760px) {
   #page, #main, #primary {
     display: block;
@@ -1300,9 +1326,6 @@ footer .social {
 
   #content {
     padding-right: 0; }
-
-  #supplementary {
-    display: none; }
 
   #access {
     display: none; }

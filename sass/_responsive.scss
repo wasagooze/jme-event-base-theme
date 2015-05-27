@@ -141,6 +141,22 @@
     display: block;
   }
 
+  /* Two Footer Widget Areas */
+  #supplementary.two .widget-area {
+    float: left;
+    margin-right: 3.7%;
+    width: 48.1%;
+  }
+  #supplementary.two .widget-area + .widget-area {
+    margin-right: 0;
+  }
+
+  /* Three Footer Widget Areas */
+  #supplementary.three .widget-area {
+    float: left;
+    margin-right: 3.7%;
+    width: 30.85%;
+  }
 }
 @media screen and (max-width: 760px) {
 
@@ -156,10 +172,6 @@
 
   #content {
     padding-right: 0;
-  }
-
-  #supplementary {
-    display: none;
   }
 
   #access {

@@ -1,3 +1,5 @@
+@import 'mixins';
+
 /* Forms */
 input[type=text],
 input[type=password],
@@ -5,7 +7,7 @@ input[type=email],
 input[type=url],
 input[type=number],
 textarea {
-  @box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.1), true);
+  @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.1), true);
   background: #fafafa;
   border: 1px solid #ddd;
   color: #888;
@@ -34,9 +36,8 @@ input[type=number] {
 }
 
 input#s {
+  @include border-radius(2px);
   background: url(images/search.png) no-repeat 5px 6px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
   font-size: 14px;
   height: 22px;
   line-height: 1.2em;
@@ -81,6 +82,21 @@ div.ss-form-entry textarea {
 .ss-form .entry-content td {
   border-top-width: 0;
   border-bottom-width: 0;
+}
+
+.btn {
+  @include border-radius(0.8em);
+  @include gradient(#3498db, #2980b9);
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.btn:hover {
+  @include gradient(#3cb0fd, #3498db);
+  text-decoration: none;
 }
 
 
