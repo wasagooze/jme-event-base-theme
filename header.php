@@ -50,9 +50,11 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="corner-ribbon top-right black shadow"><a href="http://jeffmachevents.com">A Jeff Mach Event</a></div>
 
 <div id="page" class="hfeed">
+
+	<div class="ribbon-wrapper"><div class="corner-ribbon top-right black shadow"><a href="http://jeffmachevents.com">A Jeff Mach Event</a></div></div>
+
 	<header id="branding" role="banner">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<h1><?php echo bloginfo('name'); ?></h1>

@@ -102,8 +102,6 @@ h1 {
 .error404 li {
   list-style-type: none; }
 
-/* =Structure
------------------------------------------------ */
 body {
   padding: 0 2em; }
 
@@ -166,7 +164,8 @@ body {
   background: #e2e2e2; }
 
 #page {
-  background: transparent; }
+  background: transparent;
+  overflow-x: hidden; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -302,8 +301,6 @@ a:hover {
   top: 0;
   left: 7.6%; }
 
-/* =Header
------------------------------------------------ */
 header#branding {
   padding-bottom: 10px; }
   header#branding img {
@@ -319,7 +316,16 @@ header#branding {
     height: 1px;
     overflow: hidden; }
 
+.ribbon-wrapper {
+  position: relative;
+  z-index: 90; }
+
 .corner-ribbon {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
   width: 20em;
   background: #e43;
   position: absolute;
@@ -328,20 +334,18 @@ header#branding {
   text-align: center;
   line-height: 3.25em;
   letter-spacing: 1px;
-  color: #f0f0f0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg); }
+  color: #f0f0f0; }
   .corner-ribbon.top-right {
-    top: 6em;
+    top: 4em;
     right: -6em;
     left: auto;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg); }
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
   .corner-ribbon a {
     color: white; }
-
-.corner-ribbon.sticky {
-  position: fixed; }
 
 .corner-ribbon.shadow {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8); }
@@ -1052,8 +1056,6 @@ div.ss-form-entry textarea {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3cb0fd', endColorstr='#3498db');
   text-decoration: none; }
 
-/* Social Icons
------------------------------------------------------------- */
 .social {
   margin: 0; }
 
@@ -1170,8 +1172,6 @@ footer .social {
 .attraction .social li:after {
   content: ''; }
 
-/* =Responsive Structure
------------------------------------------------ */
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
@@ -1252,7 +1252,10 @@ footer .social {
     margin-top: 0; }
 
   #branding {
-    border-top: none; } }
+    border-top: none; }
+
+  .hidden-phone {
+    display: none; } }
 @media screen and (min-width: 761px) {
   .main-menu ul ul {
     @box-shadow (0, 3px, 3px, rgba(0, 0, 0, 0.2));

@@ -1,6 +1,5 @@
 
-/* =Header
------------------------------------------------ */
+@import 'mixins';
 
 header#branding {
   padding-bottom: 10px;
@@ -22,7 +21,13 @@ header#branding {
 
 // Corner ribbons
 
+.ribbon-wrapper {
+  position: relative;
+  z-index: 90;
+}
+
 .corner-ribbon{
+  @include rotate(45deg);
   width: 20em;
   background: #e43;
   position: absolute;
@@ -32,23 +37,17 @@ header#branding {
   line-height: 3.25em;
   letter-spacing: 1px;
   color: #f0f0f0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+
 
   &.top-right  {
-    top: 6em;
-    right: -6em;
+    top: 4em;
+    right:-6em;
     left: auto;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    @include rotate(45deg);
   }
   a {
     color: white;
   }
-}
-
-.corner-ribbon.sticky{
-  position: fixed;
 }
 
 .corner-ribbon.shadow{
