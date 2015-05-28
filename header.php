@@ -14,25 +14,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php
-	// Print the <title> tag based on what is being viewed.
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		echo ' | ' . sprintf( __( 'Page %s', 'jme_event_base_theme' ), max( $paged, $page ) );
-
-	?></title>
+<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>  
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link href='http://fonts.googleapis.com/css?family=Kreon:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -67,18 +49,23 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=918897474796919&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div id="page" class="hfeed">
-		<header id="branding" role="banner">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php header_image(); ?>" alt="<?php echo bloginfo('name'); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
-			</a>
 
-			<label for="show-menu" class="main-menu show-menu">
-				&#9776; Main Menu</label>
-			<input type="checkbox" id="show-menu" role="button">
-			<nav class="main-menu" id="access" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #access -->
+<div class="corner-ribbon top-right black shadow"><a href="http://jeffmachevents.com">A Jeff Mach Event</a></div>
+
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<h1><?php echo bloginfo('name'); ?></h1>
+			<h2><?php echo bloginfo('description'); ?></h2>
+			<img src="<?php header_image(); ?>" alt="<?php echo bloginfo('name'); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
+		</a>
+
+		<label for="show-menu" class="main-menu show-menu">
+			&#9776; Main Menu</label>
+		<input type="checkbox" id="show-menu" role="button">
+		<nav class="main-menu" id="access" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #access -->
 	
 	</header><!-- #branding -->
 
