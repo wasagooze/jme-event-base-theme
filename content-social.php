@@ -14,6 +14,7 @@
   $deviantart = get_post_meta($id, 'attraction_deviantart', true);
   $instagram = get_post_meta($id, 'attraction_instagram', true);
   $soundcloud = get_post_meta($id, 'attraction_soundcloud', true);
+  $fetlife = get_post_meta($id, 'attraction_fetlife', true);
 ?>
 
 <ul class="social">
@@ -49,5 +50,8 @@
   <?php endif; ?>
   <?php if ( $soundcloud != '') : ?>
     <li><a href="<?php echo $soundcloud; ?>" class="soundcloud" rel="me" target="_blank">Soundcloud</a></li>
+  <?php endif; ?>
+  <?php if ( $fetlife != '') : ?>
+    <li><a href="<?php echo $fetlife; ?>" class="fetlife" rel="me" target="_blank">Fetlife</a></li>
   <?php endif; ?>
 </ul>

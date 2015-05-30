@@ -160,6 +160,15 @@ function attraction_meta_boxes() {
     'side',
     'default'
   );
+
+  add_meta_box(
+    'attraction_fetlife',
+    __( 'Fetlife Link', 'jme_event_base_theme' ),
+    'attraction_fetlife_meta_box',
+    'attraction',
+    'side',
+    'default'
+  );
 }
 
 function attraction_subhead_meta_box($object, $box) {
@@ -214,6 +223,10 @@ function attraction_video_meta_box($object, $box) {
   attraction_meta_box_helper($object, 'attraction_video', 'Video Reel URL');
 }
 
+function attraction_fetlife_meta_box($object, $box) {
+  attraction_meta_box_helper($object, 'attraction_fetlife', 'Fetlife URL');
+}
+
 function attraction_meta_box_helper($object, $id, $label) {
   wp_nonce_field( basename( __FILE__ ), $id . '_nonce' );
 
@@ -240,6 +253,7 @@ add_action( 'save_post', 'attraction_save_pinterest_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_instagram_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_soundcloud_meta', 10, 2 );
 add_action( 'save_post', 'attraction_save_video_meta', 10, 2 );
+add_action( 'save_post', 'attraction_save_fetlife_meta', 10, 2 );
 
 // Save Attraction Meta
 function attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key) {
@@ -376,6 +390,14 @@ function attraction_save_video_meta($post_id, $post) {
   /* Get the meta key. */
   $meta_key = 'attraction_video';
   $nonce_key = 'attraction_video_nonce';
+  attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
+}
+
+function attraction_save_fetlife_meta($post_id, $post) {
+
+  /* Get the meta key. */
+  $meta_key = 'attraction_fetlife';
+  $nonce_key = 'attraction_fetlife_nonce';
   attraction_save_meta_helper($post_id, $post, $meta_key, $nonce_key);
 }
 
