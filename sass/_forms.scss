@@ -37,7 +37,10 @@ input[type=number] {
 
 input#s {
   @include border-radius(2px);
-  background: url(images/search.png) no-repeat 5px 6px;
+  background: white;
+  background-image: url(images/search.png);
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
   font-size: 14px;
   height: 22px;
   line-height: 1.2em;
