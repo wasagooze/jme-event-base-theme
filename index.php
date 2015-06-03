@@ -4,23 +4,16 @@
  *
  */
 
-$args = array( 'post_type' => 'post', 'category_name' => 'announcements');
-
-$query = new WP_Query( $args );
-
 get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-
-			<?php if ( $query->have_posts() ) : ?>
-
-				<?php /* Start the Loop */ ?>
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php if (have_posts()): ?>
+			<?php while (have_posts()) : the_post(); ?>
 
 					<?php get_template_part( 'content', get_post_format() ); ?>
 
-				<?php endwhile; ?>
+			<?php endwhile; ?>
 
 			<?php else : ?>
 
