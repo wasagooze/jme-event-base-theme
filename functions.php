@@ -1,5 +1,57 @@
 <?php
 
+// from http://stackoverflow.com/questions/8823452/wordpress-function-to-get-top-level-category-of-a-post
+// function to get the top level category object
+// Usage - $top_cat = get_top_category();
+// echo $top_cat->slug;
+
+function get_top_category($cats) {
+    $top_cat_obj = array();
+
+    foreach($cats as $cat) {
+        if ($cat->parent == 0) {
+            $top_cat_obj[] = $cat;  
+        }
+    }
+
+    if (sizeof($top_cat_obj) == 0) {
+      return null;
+    }
+    $top_cat_obj = $top_cat_obj[0];
+    return $top_cat_obj;
+}
+
+function jme_javascript_setup() {
+
+    // custom JS
+    wp_enqueue_script( 'attractions', get_template_directory_uri() . '/js/attractions.js', array('jquery'));
+}
+
+add_action( 'wp_enqueue_scripts', 'jme_javascript_setup' );
+
+function jme_get_attraction_index($category) {
+  $select = "<select name='attraction-dropdown' id='attraction-dropdown' class='postform'>";
+  $select .= "<option value='#'>All</option>";
+
+  $args = array( 
+    'posts_per_page' => 100, 
+    'post_type' => 'attraction',
+    'orderby'=> 'title', 
+    'order' => 'ASC', 
+    'category' => $category
+  );
+
+  $posts = get_posts( $args );
+
+  foreach( $posts as $post ) {
+    $select .= "<option value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
+  }
+
+  $select.= "</select>";
+
+  return $select;
+}
+
 /*
  * Tell WordPress to run jme_event_base_setup() when the 'after_setup_theme' hook is run.
  */

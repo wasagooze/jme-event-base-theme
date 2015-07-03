@@ -1070,6 +1070,9 @@ div.ss-form-entry textarea {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3cb0fd', endColorstr='#3498db');
   text-decoration: none; }
 
+.attraction-filters {
+  margin-bottom: 1.625em; }
+
 .social {
   margin: 0; }
 
