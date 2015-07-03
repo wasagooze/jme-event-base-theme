@@ -30,7 +30,11 @@
 
 .page-header,
 .entry-header {
-    padding: 0.25em 3em .25em 1.625em;
+    padding: 0.25em 3em .25em 0.625em;
+}
+
+.page-header h1 {
+  font-size: 1.865em;
 }
 
 .page-title,

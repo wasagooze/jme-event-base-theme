@@ -17,11 +17,6 @@
       <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
     </header><!-- .entry-header -->
 
-    <?php if ( is_search() ) : // Only display Excerpts for Search ?>
-      <div class="entry-summary">
-        <?php the_excerpt(); ?>
-      </div><!-- .entry-summary -->
-      <?php else : ?>
       <div class="entry-content">
 
         <section class="attraction">
@@ -38,7 +33,6 @@
 
 
     </div><!-- .entry-content -->
-    <?php endif; ?>
 
     <footer class="entry-meta">
       <?php edit_post_link( __( 'Edit', 'jme-event-base-theme' ), '<span class="edit-link">', '</span>' ); ?>

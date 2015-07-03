@@ -3,6 +3,7 @@
 -------------------------------------------------------------- */
 
 @import 'mixins';
+@import 'colors';
 
 #content nav {
   clear: both;
@@ -116,4 +117,22 @@
 /*Show menu when invisible checkbox is checked*/
 #show-menu:checked + #access{
     display: block;
+}
+
+/* Pagination */
+
+.pagination-nav {
+  font-size: 1.25em;
+  font-weight: bold;
+  .page-numbers {
+    display: inline-block;    
+    padding: 0.25em 0.5em;
+    text-align: center;
+    width: 10%;
+    &.current {
+      padding-bottom: 0.25em;
+      color: white;
+      background-color: $linkColor;
+    }
+  }
 }
