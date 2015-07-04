@@ -42,9 +42,15 @@ function jme_event_base_setup() {
 
   add_theme_support( 'custom-header', $custom_header_support);
 
+
 }
 endif; // base setup
 
+function jme_enqueue_scripts() {
+    wp_enqueue_script( 'attractions', get_template_directory_uri() . '/js/attractions.js', array('jquery'));
+}
+
+add_action( 'wp_enqueue_scripts', 'jme_enqueue_scripts' );
 /**
  * Register sidebars and widgetized areas.
  */
@@ -107,7 +113,45 @@ function jme_widgets_init() {
 }
 add_action( 'widgets_init', 'jme_widgets_init' );
 
-require_once('includes/attractions.php');
-require_once('includes/events.php');
+function jme_post_type_dropdown($post_type, $selected, $all_option) {
+  if ($selected == null) {
+    $selected = 0;
+  }
+
+  if ($all_option == null) {
+    $all_option = "All";
+  }
+  
+  $select = "<select name='".$post_type."-dropdown' id='".$post_type."-dropdown' class='postform'>";
+  $select .= "<option value=0>".$all_option."</option>";
+
+  $args = array( 
+    'posts_per_page' => 100, 
+    'post_type' => $post_type,
+    'orderby'=> 'title', 
+    'order' => 'ASC'
+  );
+
+  $posts = get_posts( $args );
+
+  foreach( $posts as $post ) {
+    $select .= "<option ";
+    if ($post->ID == $selected) {
+      $select .= "selected ";
+    }
+    $select .= "value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
+  }
+
+  $select.= "</select>";
+
+  return $select;
+}
+
+require_once('includes/attraction-post-type.php');
+require_once('includes/custom-taxonomies.php');
+require_once('includes/workshop-post-type.php');
+require_once('includes/vendor-post-type.php');
+require_once('includes/event-post-type.php');
+require_once('includes/show-post-type.php');
 
 ?>

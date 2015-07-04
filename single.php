@@ -3,19 +3,25 @@
  * Template for displaying all single posts
  */
 
-get_header(); ?>
+get_header(); 
 
-		<section id="primary">
-			<div id="content" role="main">			
+$post_type = get_post_type();
 
-				<?php while ( have_posts() ) : the_post(); ?>
+?>
 
-					<?php get_template_part( 'content', get_post_format() ); ?>
+<section id="primary">
+	<div id="content" role="main">			
 
-				<?php endwhile; // end of the loop. ?>
+	<?php get_template_part('pageheader', $post_type); ?>
 
-			</div><!-- #content -->
-		</section><!-- #primary -->
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php get_template_part( 'content', $post_type); ?>
+
+		<?php endwhile; // end of the loop. ?>
+
+	</div><!-- #content -->
+</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
