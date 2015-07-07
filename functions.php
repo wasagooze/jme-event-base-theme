@@ -147,11 +147,13 @@ function jme_post_type_dropdown($post_type, $selected, $all_option) {
   return $select;
 }
 
-require_once('includes/attraction-post-type.php');
 require_once('includes/custom-taxonomies.php');
-require_once('includes/workshop-post-type.php');
-require_once('includes/vendor-post-type.php');
+
+require_once('includes/attraction-post-type.php');
 require_once('includes/event-post-type.php');
 require_once('includes/show-post-type.php');
+require_once('includes/vendor-post-type.php');
+require_once('includes/workshop-post-type.php');
+
 
 ?>
