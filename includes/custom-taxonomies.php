@@ -6,7 +6,7 @@ add_action( 'init', 'create_presenter_taxonomy' );
 function create_presenter_taxonomy() {
   register_taxonomy(
     'presenter',
-    array('workshop', 'events'),
+    array('workshops', 'events'),
     array(
       'label' => 'Presenter',
       'hierarchical' => true,

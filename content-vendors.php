@@ -17,7 +17,7 @@
 
         <section class="attraction">
   
-          <?php get_template_part( 'content-social', get_post_format() ); ?>
+          <?php get_template_part( 'content', 'social' ); ?>
 
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 

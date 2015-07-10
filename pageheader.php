@@ -29,6 +29,11 @@ $post_type_label = get_post_type_object($post_type)->label;
 		<label for="<?php echo $post_type; ?>-dropdown">
 		Filter By Name: <?php echo jme_post_type_dropdown($post_type, $selected, "All " . $post_type_label); ?>
 		</label>
+		<?php if ($post_type == "workshops"): ?>
+			<label for="presenter-dropdown">
+			Filter By Presenter: <?php echo jme_presenter_dropdown($selected); ?>
+			</label>
+		<?php endif; ?>
 	</div>
 
 	<?php if (!is_single()): ?>
