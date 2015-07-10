@@ -35,7 +35,7 @@ add_action( 'init', 'create_location_taxonomy' );
 function create_location_taxonomy() {
   register_taxonomy(
     'location',
-    array('workshops','events','attraction'),
+    array('workshops','events','shows'),
     array(
       'label' => 'Location',
       'hierarchical' => true,
@@ -64,7 +64,7 @@ add_action('init', 'create_day_taxonomy');
 function create_day_taxonomy() {
   register_taxonomy(
     'day',
-    array('events','workshops'),
+    array('events','workshops', 'shows'),
     array(
       'label' => 'Day',
       'hierarchical' => true,
@@ -93,7 +93,7 @@ add_action('init', 'create_timeslot_taxonomy');
 function create_timeslot_taxonomy() {
   register_taxonomy(
     'timeslot',
-    array('events','workshops'),
+    array('events','workshops', 'shows'),
     array(
       'label' => 'Timeslot',
       'hierarchical' => true,

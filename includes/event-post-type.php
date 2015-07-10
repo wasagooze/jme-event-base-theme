@@ -7,13 +7,13 @@ function create_event_post_type() {
   register_post_type( 'events',
     array(
       'labels' => array(
-        'name' => __( 'Social Events' ),
-        'singular_name' => __( 'Social Event' ),
+        'name' => __( 'Events' ),
+        'singular_name' => __( 'Event' ),
         'add_new_item' => __( 'Add New Social Event' )
       ),
       'public' => true,
-      'taxonomies' => array('category', 'post_tags'),
-      'description' => 'A special event (such as a game or catered event)',
+      'taxonomies' => array('category', 'post_tags', 'presenter'),
+      'description' => 'A special event, such as a game or catered event.',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,
     )

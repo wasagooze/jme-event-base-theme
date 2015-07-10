@@ -47,6 +47,10 @@ if (is_post_type_archive()) {
         </div>
         </footer>
 
+      <?php else : ?>
+
+        <?php include('404-content.php'); ?>
+
       <?php endif; ?>
 
       </div><!-- #content -->
