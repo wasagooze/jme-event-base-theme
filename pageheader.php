@@ -22,9 +22,11 @@ $post_type_label = get_post_type_object($post_type)->label;
 
 ?>
 
+<?php if ($post_type != 'post'): ?>
 <header class="page-header">
-	<h1 class="page-title"><a href="<?php get_post_type_archive_link($post_type) ?>"><?php echo $post_type_label; ?></a></h1>
 
+	<h1 class="page-title"><a href="<?php get_post_type_archive_link($post_type) ?>"><?php echo $post_type_label; ?></a></h1>
+	
 	<div class="attraction-filters">
 		<label for="<?php echo $post_type; ?>-dropdown">
 		Filter By Name: <?php echo jme_post_type_dropdown($post_type, $selected, "All " . $post_type_label); ?>
@@ -34,7 +36,7 @@ $post_type_label = get_post_type_object($post_type)->label;
 			Filter By Presenter: <?php echo jme_presenter_dropdown($selected); ?>
 			</label>
 		<?php endif; ?>
-	</div>
+	</div>	
 
 	<?php if (!is_single()): ?>
 	<div class="pagination-nav">
@@ -45,3 +47,4 @@ $post_type_label = get_post_type_object($post_type)->label;
 	<?php endif; ?>
 
 </header>
+<?php endif; ?>
