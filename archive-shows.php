@@ -3,7 +3,9 @@
  * Shows archive page still uses post thumbnails
  */
 
-get_header(); ?>
+get_header(); 
+
+?>
 
     <section id="primary">
       <div id="content" role="main">
