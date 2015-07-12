@@ -12,7 +12,7 @@ function create_show_post_type() {
         'add_new_item' => __( 'Add New Show' )
       ),
       'public' => true,
-      'taxonomies' => array('location', 'timeslot', 'post_tags', 'category', 'day', 'presenter'),
+      'taxonomies' => array('location', 'post_tags', 'category', 'weekday', 'start_time', 'end_time'),
       'description' => 'A show -- music, dance, performance art, etc.',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,

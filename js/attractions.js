@@ -42,12 +42,27 @@
 
     $("#presenter-dropdown").on('change', function() {
     	var value = $(this).val();
-    	if (value == 0) {
-    		window.location.href = "/workshops";
-    	} else {
-    		window.location.href = "/presenter/" + value;
-    	}
+        var defaultUrl = "/presenters";    
+        dropdownChange(value, "presenter", defaultUrl);
     });
+
+    $("#weekday-dropdown").on('change', function() {
+        var value = $(this).val();        
+        dropdownChange(value, "weekday");
+    });
+
+    $("#location-dropdown").on('change', function() {
+        var value = $(this).val();         
+        dropdownChange(value, "location");
+    });
+
+    var dropdownChange = function(value, taxonomy, defaultUrl) {
+        if (value == '0' && defaultUrl) {            
+            window.location.href = defaultUrl;
+        } else {
+            window.location.href = "/"+taxonomy+"/" + value;
+        }
+    }
 
   });
 

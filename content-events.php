@@ -3,10 +3,6 @@
   /* Template for displaying single-page attractions */
 
   $presenter = get_the_terms(get_the_ID(), 'presenter')[0];
-  $location = get_the_terms(get_the_ID(), 'location')[0];
-  $day = get_the_terms(get_the_ID(), 'day')[0];
-  $start_time = get_the_terms(get_the_ID(), 'start_time')[0];  
-  $end_time = get_the_terms(get_the_ID(), 'end_time')[0];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

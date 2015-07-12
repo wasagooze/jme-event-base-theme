@@ -2,7 +2,7 @@
 
 
   $location = get_the_terms(get_the_ID(), 'location')[0];
-  $day = get_the_terms(get_the_ID(), 'day')[0];
+  $day = get_the_terms(get_the_ID(), 'weekday')[0];
   $start_time = get_the_terms(get_the_ID(), 'start_time')[0];  
   $end_time = get_the_terms(get_the_ID(), 'end_time')[0];
 

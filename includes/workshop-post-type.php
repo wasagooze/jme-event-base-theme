@@ -12,33 +12,12 @@ function create_workshop_post_type() {
         'add_new_item' => __( 'Add New Workshop' )
       ),
       'public' => true,
-      'taxonomies' => array('post_tag', 'presenter'),
+      'taxonomies' => array('post_tag', 'presenter', 'weekday'),
       'description' => 'A workshop, with a presenter',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,
     )
   );
-}
-
-function jme_presenter_dropdown($selected) {
-
-  if ($selected == null) {
-    $selected = 0;
-  }
-
-  $args = array( 
-    'orderby' => 'slug',
-    'selected'=> $selected,
-    'show_option_all' => 'All Workshops',
-    'taxonomy' => 'presenter',
-    'echo' => 0,
-    'id' => 'presenter-dropdown',
-    'value_field' => 'slug'
-  );
-
-  $select = wp_dropdown_categories( $args );
-
-  return $select;
 }
 
 function jme_workshop_dropdown($selected) {

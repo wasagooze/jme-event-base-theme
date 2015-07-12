@@ -91,3 +91,18 @@
 .attraction-subhead {
   font-size: 0.9em;
 }
+
+/* Attraction Filters. */
+
+.attraction-filters {
+  padding: 1em;
+}
+
+.attraction-filters label {
+  display: block;
+  font-weight: bold;
+  select {
+    display: block;
+    width: 100%;
+  }
+}

@@ -12,7 +12,7 @@ function create_event_post_type() {
         'add_new_item' => __( 'Add New Social Event' )
       ),
       'public' => true,
-      'taxonomies' => array('category', 'post_tags', 'presenter'),
+      'taxonomies' => array('category', 'post_tags', 'location', 'weekday', 'start_time', 'end_time'),
       'description' => 'A special event, such as a game or catered event.',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,

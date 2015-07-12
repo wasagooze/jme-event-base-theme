@@ -23,9 +23,8 @@ $terms = get_terms('presenter');
       <div class="entry-content">
       <dl>
       <?php foreach ($terms as $term): ?>        
-
         
-        <dt><?php echo $term->name; ?></dt>
+        <dt><a href="<?php echo get_term_link($term, 'presenter'); ?>"><?php echo $term->name; ?></a></dt>
         <dd><?php echo $term->description; ?></dd>
       <?php endforeach; ?>
       </dl>

@@ -61,10 +61,10 @@ function create_location_taxonomy() {
 add_action('init', 'create_day_taxonomy');
 function create_day_taxonomy() {
   register_taxonomy(
-    'day',
-    array('events','workshops', 'shows'),
+    'weekday',
+    array('events', 'workshops', 'shows'),
     array(
-      'label' => 'Day',
+      'label' => 'Weekday',
       'labels' => array(
         'name' => 'Days',
         'singular_name' => 'Day',
@@ -154,6 +154,34 @@ function create_end_time_taxonomy() {
       )
     )
   );
+}
+
+function jme_taxonomy_dropdown($selected, $taxonomy, $post_type) {
+  if ($selected == null) {
+    $selected = 0;
+  }
+
+  if ($post_type == null) {
+    $all_option = "Show All";
+  } else {
+    $all_option = "All " . get_post_type_object($post_type)->labels->name;
+  } 
+
+  $id = $taxonomy."-dropdown";
+  $args = array( 
+    'orderby' => 'name',
+    'selected'=> $selected,
+    'show_option_all' => $all_option,
+    'taxonomy' => $taxonomy,
+    'hide_if_empty' => true,
+    'echo' => 0,
+    'id' => $id,
+    'value_field' => 'slug'
+  );
+
+  $select = wp_dropdown_categories( $args );
+
+  return $select;
 }
 
 ?>
