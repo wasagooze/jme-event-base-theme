@@ -5,7 +5,8 @@
   $presenter = get_the_terms(get_the_ID(), 'presenter')[0];
   $location = get_the_terms(get_the_ID(), 'location')[0];
   $day = get_the_terms(get_the_ID(), 'day')[0];
-  $timeslot = get_the_terms(get_the_ID(), 'timeslot')[0];
+  $start_time = get_the_terms(get_the_ID(), 'start_time')[0];  
+  $end_time = get_the_terms(get_the_ID(), 'end_time')[0];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -18,20 +19,14 @@
 
         <section class="attraction">
 
-          <?php if ($location != null): ?>
-            <p class="where"><b>Where</b>: <a href="<?php esc_url(get_term_link($location)); ?>"><?php echo $location->name; ?></a></p>
-          <?php endif; ?>
+          <?php get_template_part( 'content', 'social'); ?>
 
-          <?php if ($day != null): ?>
-            <p class="when"><b>When</b>: <?php echo $day->name; ?><?php if ($timeslot != null) { echo " at " . $timeslot->name; } ?></p>
-          <?php endif; ?>
-
-          <?php get_template_part( 'content-social', get_post_format() ); ?>
+          <?php get_template_part('content', 'schedule'); ?>
 
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
           <?php if ($presenter != null): ?>
-            Presented by: <a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a>
+            Hosted By: <a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a>
           <?php endif; ?>
 
         </section>

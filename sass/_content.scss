@@ -152,3 +152,9 @@ dl.gallery-item {
   clear: both;
   display: block;
 }
+
+.entry-content .schedule-info {
+  dd, dt {
+    display: inline-block;
+  }
+}

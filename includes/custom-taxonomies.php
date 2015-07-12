@@ -9,7 +9,6 @@ function create_presenter_taxonomy() {
     array('workshops', 'events'),
     array(
       'label' => 'Presenter',
-      'hierarchical' => true,
       'labels' => array(
         'name' => 'Presenters',
         'singular_name' => 'Presenter',
@@ -38,7 +37,6 @@ function create_location_taxonomy() {
     array('workshops','events','shows'),
     array(
       'label' => 'Location',
-      'hierarchical' => true,
       'labels' => array(
         'name' => 'Locations',
         'singular_name' => 'Venue Location',
@@ -67,7 +65,6 @@ function create_day_taxonomy() {
     array('events','workshops', 'shows'),
     array(
       'label' => 'Day',
-      'hierarchical' => true,
       'labels' => array(
         'name' => 'Days',
         'singular_name' => 'Day',
@@ -92,11 +89,69 @@ function create_day_taxonomy() {
 add_action('init', 'create_timeslot_taxonomy');
 function create_timeslot_taxonomy() {
   register_taxonomy(
-    'timeslot',
+    'timeslot',        
     array('events','workshops', 'shows'),
     array(
-      'label' => 'Timeslot',
+      'label' => 'Timeslot'
+    )
+  );
+}
+
+
+add_action('init', 'create_start_time_taxonomy');
+function create_start_time_taxonomy() {
+  register_taxonomy(
+    'start_time',
+    array('events','workshops', 'shows'),
+    array(
       'hierarchical' => true,
+      'label' => 'Start Time',
+      'labels' => array(
+        'name' => 'Start Times',
+        'singular_name' => 'Start Time',
+        'search_items' => 'Search Start Times',
+        'all_items' => 'All Start Times',
+        'edit_item' => 'Edit Start Times',
+        'update_item' => 'Update Start Times',
+        'add_new_item' => 'Add New Start Time',
+        'new_item_name' => 'New Start Time Name',
+        'menu_name' => 'Start Time',
+        'view_item' => 'View Start Times',
+        'popular_items' => 'Popular Start Times',
+        'separate_items_with_commas' => 'Separate Start Times with commas',
+        'add_or_remove_items' => 'Add or remove Start Times',
+        'choose_from_most_used' => 'Choose from the most used Start Times',
+        'not_found' => 'No Start Times found'
+      )
+    )
+  );
+}
+
+add_action('init', 'create_end_time_taxonomy');
+function create_end_time_taxonomy() {
+  register_taxonomy(
+    'end_time',
+    array('events','workshops', 'shows'),
+    array(
+      'label' => 'End Time',      
+      'hierarchical' => true,
+      'labels' => array(
+        'name' => 'End Times',
+        'singular_name' => 'End Time',
+        'search_items' => 'Search End Times',
+        'all_items' => 'All End Times',
+        'edit_item' => 'Edit End Times',
+        'update_item' => 'Update End Times',
+        'add_new_item' => 'Add New End Time',
+        'new_item_name' => 'New End Time Name',
+        'menu_name' => 'End Time',
+        'view_item' => 'View End Times',
+        'popular_items' => 'Popular End Times',
+        'separate_items_with_commas' => 'Separate End Times with commas',
+        'add_or_remove_items' => 'Add or remove End Times',
+        'choose_from_most_used' => 'Choose from the most used End Times',
+        'not_found' => 'No End Times found'
+      )
     )
   );
 }
