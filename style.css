@@ -363,6 +363,13 @@ header#branding {
 .corner-ribbon.yellow {
   background: #ec0; }
 
+/* Attraction Filters. */
+.attraction-filters {
+  padding: 1em; }
+
+.attraction-filters label {
+  display: block; }
+
 /* =Content
 ----------------------------------------------- */
 #main {
@@ -1341,6 +1348,19 @@ footer .social {
     display: none; }
 
   .attraction-title {
-    padding: 0.25em; } }
+    padding: 0.25em; }
+
+  #content .page-header {
+    padding: 1em 2em; }
+
+  .attraction-filters {
+    padding: 0; }
+
+  .page-header select {
+    display: block;
+    margin-bottom: 1em; }
+
+  .content-footer .pagination-nav {
+    padding: 1em 2em; } }
 
 /*# sourceMappingURL=style.css.map */

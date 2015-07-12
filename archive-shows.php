@@ -1,35 +1,20 @@
 <?php
 /**
- * Category template
+ * Shows archive page still uses post thumbnails
  */
-
-$category_name = get_category(get_query_var('cat'))->slug;
-
-$args = array( 'post_type' => 'any', 'category_name' => $category_name, 'nopaging' => true, 'orderby' => 'name', 'order' => 'ASC');
-
-$query = new WP_Query( $args );
 
 get_header(); ?>
 
     <section id="primary">
       <div id="content" role="main">
 
-      <?php if ( $query->have_posts() ) : ?>
-
-        <header class="page-header">
-          <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
-
-          <?php
-            $category_description = category_description();
-            if ( ! empty( $category_description ) ) {
-              echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-            }
-          ?>
-        </header>
+      <?php if (have_posts() ) : ?>
+        
+        <?php get_template_part('pageheader', $post_type); ?>    
 
         <ul class="category-listing">
         <?php /* Start the Loop */ ?>
-        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <?php while (have_posts() ) : the_post(); ?>
        	 	<a href="<?php the_permalink(); ?>">
             <?php 
             $large_image_url = '';
