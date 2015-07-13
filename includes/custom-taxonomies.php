@@ -86,18 +86,6 @@ function create_day_taxonomy() {
   );
 }
 
-add_action('init', 'create_timeslot_taxonomy');
-function create_timeslot_taxonomy() {
-  register_taxonomy(
-    'timeslot',        
-    array('events','workshops', 'shows'),
-    array(
-      'label' => 'Timeslot'
-    )
-  );
-}
-
-
 add_action('init', 'create_start_time_taxonomy');
 function create_start_time_taxonomy() {
   register_taxonomy(

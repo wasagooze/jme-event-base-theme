@@ -2,9 +2,12 @@
 /**
  * Taxonomy template
  */
+
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); 
 
 get_header(); 
+
+query_posts($query_string . '&orderby=title&order=ASC');
 
 ?>
 

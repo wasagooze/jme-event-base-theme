@@ -40,8 +40,8 @@ function has_taxonomy($post_type, $taxonomy) {
 
 	<h1 class="page-title">
 		<?php echo $title; ?>
-	</h1>
-	
+	</h1>	
+
 	<div class="attraction-filters">
 		<?php if ($post_type != null): ?>
 		<label for="<?php echo $post_type; ?>-dropdown">
@@ -49,17 +49,17 @@ function has_taxonomy($post_type, $taxonomy) {
 		</label>
 		<?php endif; ?>
 
-		<?php if (has_taxonomy($post_type, 'location') || is_tax('location')): ?>
+		<?php /* if (has_taxonomy($post_type, 'location') || is_tax('location')): ?>
 		<label for="location-dropdown">
 			Filter By Location: <?php echo jme_taxonomy_dropdown($selected, 'location', $post_type); ?>
 		</label>		
-		<?php endif; ?>
+		<?php endif; */ ?>
 
-		<?php if (has_taxonomy($post_type, 'weekday') || is_tax('weekday')): ?>
+		<?php /* if (has_taxonomy($post_type, 'weekday') || is_tax('weekday')): ?>
 		<label for="weekday-dropdown">
 			Filter By Day: <?php echo jme_taxonomy_dropdown($selected, 'weekday', $post_type); ?>
 		</label>		
-		<?php endif; ?>
+		<?php endif; */ ?>
 
 		<?php if (has_taxonomy($post_type, 'presenter') || is_tax('presenter')): ?>
 		<label for="presenter-dropdown">
@@ -67,6 +67,10 @@ function has_taxonomy($post_type, $taxonomy) {
 		</label>
 		<?php endif; ?>
 	</div>	
+
+	<?php if ($term != null): ?>
+		<p><?php echo $term->description; ?></p>
+	<?php endif; ?>
 
 	<?php if (!is_single()): ?>
 	<div class="pagination-nav">

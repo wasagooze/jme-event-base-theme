@@ -33,7 +33,7 @@ function show_meta_boxes() {
         'attraction_website',
         __( 'Website', 'jme_event_base_theme' ),
         'attraction_website_meta_box',
-        'attraction',
+        'shows',
         'side',
         'default'
     );
@@ -42,7 +42,7 @@ function show_meta_boxes() {
       'attraction_facebook',
       __( 'Facebook Page Url', 'jme_event_base_theme' ),
       'attraction_facebook_meta_box',
-      'attraction',
+      'shows',
       'side',
       'default'
     );
@@ -51,7 +51,7 @@ function show_meta_boxes() {
     'attraction_twitter',
     __( 'Twitter Feed', 'jme_event_base_theme' ),
     'attraction_twitter_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -60,7 +60,7 @@ function show_meta_boxes() {
     'attraction_tumblr',
     __( 'Tumblr Username', 'jme_event_base_theme' ),
     'attraction_tumblr_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -69,7 +69,7 @@ function show_meta_boxes() {
     'attraction_bandcamp',
     __( 'Bandcamp Url', 'jme_event_base_theme' ),
     'attraction_bandcamp_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -78,7 +78,7 @@ function show_meta_boxes() {
     'attraction_reverbnation',
     __( 'Reverbnation Url', 'jme_event_base_theme' ),
     'attraction_reverbnation_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -87,7 +87,7 @@ function show_meta_boxes() {
     'attraction_pinterest',
     __( 'Pinterest Url', 'jme_event_base_theme' ),
     'attraction_pinterest_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -96,7 +96,7 @@ function show_meta_boxes() {
     'attraction_deviantart',
     __( 'DeviantArt Url', 'jme_event_base_theme' ),
     'attraction_deviantart_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -105,7 +105,7 @@ function show_meta_boxes() {
     'attraction_instagram',
     __( 'Instagram Url', 'jme_event_base_theme' ),
     'attraction_instagram_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -114,7 +114,7 @@ function show_meta_boxes() {
     'attraction_soundcloud',
     __( 'Soundcloud Url', 'jme_event_base_theme' ),
     'attraction_soundcloud_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -123,7 +123,7 @@ function show_meta_boxes() {
     'attraction_video',
     __( 'Video Reel', 'jme_event_base_theme' ),
     'attraction_video_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );
@@ -132,7 +132,7 @@ function show_meta_boxes() {
     'attraction_fetlife',
     __( 'Fetlife Link', 'jme_event_base_theme' ),
     'attraction_fetlife_meta_box',
-    'attraction',
+    'shows',
     'side',
     'default'
   );

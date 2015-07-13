@@ -5,6 +5,19 @@
 
 get_header(); 
 
+if (is_post_type_archive()) {
+
+  $post_type = post_type_archive_title('',false);
+
+  query_posts(array(
+    'post_type' => $post_type,
+    'order' => 'ASC',
+    'orderby' => 'title'
+    )
+  );
+
+}
+
 ?>
 
     <section id="primary">
@@ -12,7 +25,12 @@ get_header();
 
       <?php if (have_posts() ) : ?>
         
-        <?php get_template_part('pageheader', $post_type); ?>    
+        <header class="page-header">
+
+          <h1 class="page-title">
+            Shows and Entertainment
+          </h1>
+        </header>
 
         <ul class="category-listing">
         <?php /* Start the Loop */ ?>

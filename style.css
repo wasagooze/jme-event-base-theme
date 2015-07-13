@@ -497,9 +497,6 @@ dl.gallery-item {
   clear: both;
   display: block; }
 
-.entry-content .schedule-info dd, .entry-content .schedule-info dt {
-  display: inline-block; }
-
 /* Images */
 .entry-content img,
 .widget img {

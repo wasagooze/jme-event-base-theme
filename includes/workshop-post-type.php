@@ -34,7 +34,7 @@ function workshop_meta_boxes() {
         'attraction_website',
         __( 'Website', 'jme_event_base_theme' ),
         'attraction_website_meta_box',
-        'vendors',
+        'workshops',
         'side',
         'default'
     );
@@ -43,7 +43,7 @@ function workshop_meta_boxes() {
       'attraction_facebook',
       __( 'Facebook Page Url', 'jme_event_base_theme' ),
       'attraction_facebook_meta_box',
-      'vendors',
+      'workshops',
       'side',
       'default'
     );
@@ -52,7 +52,7 @@ function workshop_meta_boxes() {
     'attraction_twitter',
     __( 'Twitter Feed', 'jme_event_base_theme' ),
     'attraction_twitter_meta_box',
-    'vendors',
+    'workshops',
     'side',
     'default'
   );
@@ -61,7 +61,7 @@ function workshop_meta_boxes() {
     'attraction_video',
     __( 'Video Reel', 'jme_event_base_theme' ),
     'attraction_video_meta_box',
-    'vendors',
+    'workshops',
     'side',
     'default'
   );
@@ -70,7 +70,7 @@ function workshop_meta_boxes() {
     'attraction_fetlife',
     __( 'Fetlife Link', 'jme_event_base_theme' ),
     'attraction_fetlife_meta_box',
-    'vendors',
+    'workshops',
     'side',
     'default'
   );
