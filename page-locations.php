@@ -32,8 +32,8 @@ $terms = get_terms('location');
       </article>
 
       <?php else : ?>
-
-          <?php include('404-content.php'); ?>
+          
+        <?php get_template_part('_partials/404-content'); ?>
 
       <?php endif; ?>
 

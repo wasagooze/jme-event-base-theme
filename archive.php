@@ -27,29 +27,26 @@ if (is_post_type_archive()) {
       <div id="content" role="main">
 
       <?php if ( have_posts() ) : ?>
-        <?php get_template_part('pageheader', $post_type); ?>    
+        <?php get_template_part('_partials/pageheader'); ?>    
 
-          <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>       	 	
-            <?php get_template_part( 'content', $post_type); ?>
+            <?php get_template_part( '_partials/content', $post_type); ?>
           <?php endwhile; ?>
 
-          <?php /* Pagination */ ?>
-
         <footer class="content-footer">
-        <div class="pagination-nav">
-          <?php 
-          echo paginate_links(array(
-            'prev_next' => False,
-          )); 
-          ?>
+          <div class="pagination-nav">
+            <?php 
+            echo paginate_links(array(
+              'prev_next' => False,
+            )); 
+            ?>
 
-        </div>
+          </div>
         </footer>
 
       <?php else : ?>
-
-        <?php include('404-content.php'); ?>
+      
+        <?php get_template_part('_partials/404-content'); ?>
 
       <?php endif; ?>
 

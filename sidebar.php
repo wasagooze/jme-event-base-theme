@@ -1,7 +1,7 @@
 
 <aside class="secondary" class="widget-area" role="complementary">
 
-<?php get_template_part( 'website-social', get_post_format() ); ?>
+<?php get_template_part( '_partials/website-social', get_post_format() ); ?>
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>

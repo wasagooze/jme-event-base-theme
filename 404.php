@@ -9,7 +9,7 @@ get_header(); ?>
 	<div id="primary">
 		<div id="content" role="main">
 
-			<?php get_template_part('404-content'); ?>
+			<?php get_template_part('_partials/404-content'); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

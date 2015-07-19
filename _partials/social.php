@@ -1,6 +1,10 @@
 
 <?php 
-  // get relevant metadata
+/**
+ * _Partials/Social Template
+ * 
+ * Displays social media links in content for attractions
+ */
 
   $id = get_the_ID();
   $website = get_post_meta( $id, 'attraction_website', true ); 

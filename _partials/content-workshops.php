@@ -15,7 +15,7 @@
 
         <section class="attraction">
   
-          <?php get_template_part( 'content', 'social'); ?>
+          <?php get_template_part( '_partials/social'); ?>
 
           <?php //get_template_part('content', 'schedule'); ?>
 

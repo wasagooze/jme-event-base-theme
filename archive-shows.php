@@ -1,6 +1,6 @@
 <?php
 /**
- * Shows archive page still uses post thumbnails
+ * Archive pages for Shows 
  */
 
 get_header(); 
@@ -50,9 +50,9 @@ if (is_post_type_archive()) {
         <?php endwhile; ?>
         </li>
 
-      <?php else : ?>
+      <?php else : ?>      
 
-        <?php include('404-content.php'); ?>
+        <?php get_template_part('_partials/404-content'); ?>
 
       <?php endif; ?>
       </ul>

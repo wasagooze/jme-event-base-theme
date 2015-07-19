@@ -16,16 +16,16 @@ query_posts($query_string . '&orderby=title&order=ASC');
 
       <?php if ( have_posts() ) : ?>
         
-        <?php get_template_part('pageheader', $post_type); ?>   
+        <?php get_template_part('_partials/pageheader'); ?>   
         
           <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>       	 	
-            <?php get_template_part( 'content', get_post_type() ); ?>
+            <?php get_template_part( '_partials/content', get_post_type() ); ?>
           <?php endwhile; ?>
 
         <?php else : ?>
 
-          <?php include('404-content.php'); ?>
+          <?php get_template_part('_partials/404-content'); ?>
 
         <?php endif; ?>
 
