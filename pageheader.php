@@ -69,7 +69,7 @@ function has_taxonomy($post_type, $taxonomy) {
 	</div>	
 
 	<?php if ($term != null): ?>
-		<p><?php echo $term->description; ?></p>
+		<section class="description"><?php echo $term->description; ?></section>
 	<?php endif; ?>
 
 	<?php if (!is_single()): ?>

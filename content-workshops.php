@@ -17,7 +17,7 @@
   
           <?php get_template_part( 'content', 'social'); ?>
 
-          <?php get_template_part('content', 'schedule'); ?>
+          <?php //get_template_part('content', 'schedule'); ?>
 
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 

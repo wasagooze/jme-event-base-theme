@@ -395,6 +395,9 @@ header#branding {
 .page-header h1 {
   font-size: 1.865em; }
 
+.page-header .description {
+  padding: 0 1em; }
+
 .page-title,
 .entry-title {
   clear: both;
@@ -1031,9 +1034,6 @@ div.ss-form-entry textarea {
   background: -o-linear-gradient(#3cb0fd, #3498db);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3cb0fd', endColorstr='#3498db');
   text-decoration: none; }
-
-.attraction-filters {
-  margin-bottom: 1.625em; }
 
 .social {
   margin: 0; }

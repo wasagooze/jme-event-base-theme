@@ -5,7 +5,7 @@
 
 get_header(); 
 
-$terms = get_terms('presenter'); 
+$terms = get_terms('location'); 
 
 ?>
 
@@ -16,14 +16,14 @@ $terms = get_terms('presenter');
         
       <article <?php post_class(); ?>>
       <header class="entry-header">
-          <h1 class="entry-title">Presenter Bios</a></h1>                            
+          <h1 class="entry-title">Locations</a></h1>                            
       </header>
 
       <div class="entry-content">
       <dl>
       <?php foreach ($terms as $term): ?>        
         
-        <dt><a href="<?php echo get_term_link($term, 'presenter'); ?>"><?php echo $term->name; ?></a></dt>
+        <dt><a href="<?php echo get_term_link($term, 'location'); ?>"><?php echo $term->name; ?></a></dt>
         <dd><?php echo $term->description; ?></dd>
       <?php endforeach; ?>
       </dl>

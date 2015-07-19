@@ -53,7 +53,7 @@
 
     $("#location-dropdown").on('change', function() {
         var value = $(this).val();         
-        dropdownChange(value, "location");
+        dropdownChange(value, "location", "/locations");
     });
 
     var dropdownChange = function(value, taxonomy, defaultUrl) {
