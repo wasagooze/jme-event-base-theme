@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying content
+ * Template for displaying content on posts
  *
  */
 ?>

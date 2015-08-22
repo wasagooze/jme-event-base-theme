@@ -1,6 +1,6 @@
 <?php 
 
-  /* Detail view for vendors */
+  /* Detail view for shows */
 
   $id = get_the_ID();
   $video = get_post_meta( $id, 'attraction_video', true);
