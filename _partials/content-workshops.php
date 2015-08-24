@@ -2,7 +2,7 @@
 
   /* Template for displaying single-page workshops */
 
-  $presenter = get_the_terms(get_the_ID(), 'presenter')[0];
+  $presenters = get_the_terms(get_the_ID(), 'presenter');
 ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,8 +21,13 @@
 
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
-          <?php if ($presenter != null): ?>
-            Presented by: <a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a>
+          <?php if ($presenters[0] != null): ?>
+            Presented by: 
+            <ul>
+            <?php foreach ($presenters as $presenter): ?>
+              <li><a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a></li>
+            <?php endforeach; ?>
+            </ul>
           <?php endif; ?>
         </section>
 
