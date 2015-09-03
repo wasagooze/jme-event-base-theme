@@ -147,6 +147,14 @@ function jme_post_type_dropdown($post_type, $selected, $all_option) {
   return $select;
 }
 
+function post_type_tags_fix($request) {
+    if ( isset($request['tag']) && !isset($request['post_type']) )
+    $request['post_type'] = 'any';
+    return $request;
+} 
+
+add_filter('request', 'post_type_tags_fix');
+
 require_once('includes/custom-taxonomies.php');
 
 require_once('includes/attraction-post-type.php');
