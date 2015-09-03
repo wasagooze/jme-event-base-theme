@@ -1,0 +1,107 @@
+@import 'mixins';
+
+/* Forms */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+textarea {
+  @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.1), true);
+  background: #fafafa;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=number]:focus,
+textarea:focus {
+  color: #373737;
+}
+
+textarea {
+  padding-left: 3px;
+  width: 98%;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number] {
+  padding: 3px;
+}
+
+input#s {
+  @include border-radius(2px);
+  background: white;
+  background-image: url(images/search.png);
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  font-size: 14px;
+  height: 22px;
+  line-height: 1.2em;
+  padding: 4px 10px 4px 28px;
+}
+
+input#searchsubmit {
+  display: none;
+}
+
+div.ss-form-container {
+  font-family: inherit;
+}
+
+div.ss-required-asterisk {
+  display: none;
+}
+
+div.ss-form-entry {
+  padding-bottom: 1.5em;
+}
+
+div.ss-form-desc {
+  font-style: oblique;
+  padding-bottom: 1em;
+}
+
+div.ss-form-entry input[type="text"], 
+div.ss-form-entry textarea {  
+  background-color: white;
+  border: #ddd;
+  width: 100%;
+}
+
+.ss-q-title {
+  font-weight: bold;
+}
+
+#ss-form ol {
+  margin-left: 0;
+}
+
+.ss-form .entry-content table,
+.ss-form .entry-content td {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.btn {
+  @include border-radius(0.8em);
+  @include gradient(#3498db, #2980b9);
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.btn:hover {
+  @include gradient(#3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+

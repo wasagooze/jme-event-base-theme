@@ -1,0 +1,60 @@
+
+/* =Footer
+----------------------------------------------- */
+
+#colophon {
+  background-color: black;
+  clear: both;
+}
+
+#supplementary {
+  border-top: 1px solid #ddd;
+  padding: 1.625em 7.6%;
+  overflow: hidden;
+}
+
+#supplementary.three .widget-area + .widget-area + .widget-area {
+  margin-right: 0;
+}
+
+/* Site Generator Line */
+#site-generator {
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 12px;
+  line-height: 2.2em;
+  padding: 2.2em 0.5em;
+  text-align: center;
+}
+#site-generator a {
+  color: #555;
+  font-weight: bold;
+}
+
+/* JME Customization */
+footer .widget ul li {
+  line-height: 1.5em;
+}
+
+footer .widget-title {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  text-transform: none;
+  text-align: center;
+}
+
+footer .widget a,
+footer .copyright a {
+  color: #6abdc4;
+  font-weight: normal;
+}
+
+footer .widget-title {
+  border-bottom: 1px solid #c7e0d3;
+  color: #c7e0d3;
+}
+
+.copyright {
+  color: #c7e0d3;
+}

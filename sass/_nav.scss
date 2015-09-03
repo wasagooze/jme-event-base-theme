@@ -1,0 +1,138 @@
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+@import 'mixins';
+@import 'colors';
+
+#content nav {
+  clear: both;
+  overflow: hidden;
+  padding: 0 0 1.625em;
+}
+
+#content nav a {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2.2em;
+}
+
+#nav-above {
+  padding: 0 0 1.625em;
+}
+
+#nav-above {
+  display: none;
+}
+
+.paged #nav-above {
+  display: block;
+}
+
+.nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+#content nav .meta-nav {
+  font-weight: normal;
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+
+.main-menu {
+  @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.4));
+  @include gradient (#252525, #0a0a0a);
+
+  clear: both;
+  display: block;
+  float: left;
+  margin: 0 auto;
+  font-weight: bold;
+  width: 100%;
+}
+
+.main-menu ul,
+.show-menu {
+  font-size: 13px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.main-menu ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.main-menu .sub-menu {
+  padding-left: 0;
+}
+
+.main-menu ul li,
+.show-menu {
+  float: left;
+  position: relative;
+}
+
+.main-menu a {
+  color: #eee;
+  display: block;
+  line-height: 3em;
+  padding: 0 1.2125em;
+  text-decoration: none;
+}
+
+.show-menu {
+  color: #eee;
+  line-height: 3em;
+  padding: 0 1.2125em;
+}
+
+.main-menu .current-menu-item > a,
+.main-menu .current-menu-ancestor > a,
+.main-menu .current_page_item > a,
+.main-menu .current_page_ancestor > a {
+  font-weight: bold;
+}
+
+/* Customization for responsive nav menu */
+
+.show-menu {
+  display: none;
+  margin-bottom: 0;
+}
+
+/*Hide checkbox*/
+#show-menu {
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+#show-menu:checked + #access{
+    display: block;
+}
+
+/* Pagination */
+
+.pagination-nav {
+  font-size: 1.25em;
+  font-weight: bold;
+  .page-numbers {
+    display: inline-block;    
+    padding: 0.25em 0.5em;
+    text-align: center;
+    width: 10%;
+    &.current {
+      padding-bottom: 0.25em;
+      color: white;
+      background-color: $linkColor;
+    }
+  }
+}

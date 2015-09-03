@@ -1,0 +1,61 @@
+body {
+  padding: 0 2em;
+}
+
+#page {
+  @include box-shadow(0, 6px, 6px, black);
+  display: table;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 80%;
+}
+
+#branding hgroup {
+  margin: 0 7.6%;
+}
+
+#primary {
+  display: table-cell;
+  margin: 0;
+  vertical-align: top;
+}
+
+#content {
+  padding-right: 3.25em;
+}
+
+.secondary {
+  display: table-cell;
+  margin: 0;
+  max-width: 200px;
+  vertical-align: top;
+  width: 20%;
+}
+
+/* error404 */
+.error404 #primary {
+  float: none;
+  margin: 0;
+}
+.error404 #primary #content {
+  margin: 0 7.6%;
+  width: auto;
+}
+
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.625em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.625em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
