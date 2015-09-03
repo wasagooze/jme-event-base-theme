@@ -17,18 +17,16 @@
   
           <?php get_template_part( '_partials/social'); ?>
 
+
+
           <?php //get_template_part('content', 'schedule'); ?>
 
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
-          <?php if ($presenters[0] != null): ?>
-            Presented by: 
-            <ul>
-            <?php foreach ($presenters as $presenter): ?>
-              <li><a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a></li>
-            <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>
+          <?php get_template_part('_partials/tag-list'); ?>
+
+          <?php get_template_part('_partials/presenter-list'); ?>
+
         </section>
 
 

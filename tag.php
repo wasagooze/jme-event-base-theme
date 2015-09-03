@@ -15,7 +15,7 @@ get_header();
         <?php get_template_part('_partials/tagheader'); ?>    
 
           <?php while ( have_posts() ) : the_post(); ?>       	 	
-            <?php get_template_part( '_partials/content', $post_type); ?>
+            <?php get_template_part( '_partials/content', get_post_type(get_the_ID())); ?>
           <?php endwhile; ?>
 
         <footer class="content-footer">

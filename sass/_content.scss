@@ -156,3 +156,20 @@ dl.gallery-item {
   clear: both;
   display: block;
 }
+
+.presenter-list {
+  ul {
+    display: inline-block;
+    margin: 0;
+    list-style-type: none;
+    li {
+      &:after {
+        content: ', ';
+      }
+      &:last-child:after {
+        content: "";
+      }
+      display: inline-block;
+    }
+  }
+}

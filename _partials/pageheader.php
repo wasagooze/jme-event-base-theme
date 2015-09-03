@@ -39,6 +39,9 @@ function has_taxonomy($post_type, $taxonomy) {
 <header class="page-header">
 
 	<h1 class="page-title">
+		<?php if (is_tax('presenter')): ?>
+			Presenter:
+		<?php endif; ?>
 		<?php echo $title; ?>
 	</h1>	
 

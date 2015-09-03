@@ -89,9 +89,11 @@ div.ss-form-entry textarea {
   border-bottom-width: 0;
 }
 
-.btn {
+.btn,
+.submit {
   @include border-radius(0.8em);
   @include gradient(#3498db, #2980b9);
+  border: none;
   color: #ffffff;
   font-size: 1.25em;
   font-weight: bold;
@@ -99,7 +101,8 @@ div.ss-form-entry textarea {
   text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover,
+.submit:hover {
   @include gradient(#3cb0fd, #3498db);
   text-decoration: none;
 }

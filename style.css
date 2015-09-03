@@ -500,6 +500,17 @@ dl.gallery-item {
   clear: both;
   display: block; }
 
+.presenter-list ul {
+  display: inline-block;
+  margin: 0;
+  list-style-type: none; }
+  .presenter-list ul li {
+    display: inline-block; }
+    .presenter-list ul li:after {
+      content: ', '; }
+    .presenter-list ul li:last-child:after {
+      content: ""; }
+
 /* Images */
 .entry-content img,
 .widget img {
@@ -794,6 +805,9 @@ footer .widget {
 #secondary .constant-contact-form .widget-title {
   display: block; }
 
+#main .tagcloud {
+  display: none; }
+
 /* =Footer
 ----------------------------------------------- */
 #colophon {
@@ -843,6 +857,35 @@ footer .widget-title {
 
 .copyright {
   color: #c7e0d3; }
+
+#comments {
+  max-width: 480px; }
+
+.comment-reply-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 150%; }
+
+.comment-form label {
+  font-weight: bold;
+  display: block; }
+
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%; }
+
+.commentlist {
+  list-style: none; }
+  .commentlist .fn {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block; }
+  .commentlist .says {
+    display: none; }
+  .commentlist .comment-content {
+    padding: 1em 0 0 1em;
+    margin: 1em;
+    border: 1px solid #eee; }
 
 .attraction .links {
   clear: both;
@@ -1012,7 +1055,8 @@ div.ss-form-entry textarea {
   border-top-width: 0;
   border-bottom-width: 0; }
 
-.btn {
+.btn,
+.submit {
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;
   border-radius: 0.8em;
@@ -1021,13 +1065,15 @@ div.ss-form-entry textarea {
   background: -moz-linear-gradient(top, #3498db, #2980b9);
   background: -o-linear-gradient(#3498db, #2980b9);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3498db', endColorstr='#2980b9');
+  border: none;
   color: #ffffff;
   font-size: 1.25em;
   font-weight: bold;
   padding: 0.5em 1em;
   text-decoration: none; }
 
-.btn:hover {
+.btn:hover,
+.submit:hover {
   background: #3cb0fd;
   background: -webkit-gradient(linear, left top, left bottom, from(#3cb0fd), to(#3498db));
   background: -moz-linear-gradient(top, #3cb0fd, #3498db);

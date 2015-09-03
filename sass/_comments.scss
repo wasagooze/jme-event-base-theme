@@ -1,0 +1,40 @@
+// Respond form
+
+#comments {
+	max-width: 480px;
+}
+
+.comment-reply-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 150%;
+}
+
+.comment-form label {
+	font-weight: bold;
+	display: block;
+}
+
+.comment-form {
+	input[type="text"],
+	textarea {
+		width: 100%;
+	}
+}
+
+.commentlist {
+	list-style: none;
+	.fn {
+		font-size: 1.5em;
+		font-weight: bold;
+		display: block;
+	}
+	.says {
+		display: none;
+	}
+	.comment-content {
+		padding: 1em 0 0 1em;
+		margin: 1em;
+		border: 1px solid #eee;
+	}
+}

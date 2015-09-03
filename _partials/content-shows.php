@@ -25,6 +25,8 @@
             <iframe src='<?php echo $video; ?>' frameborder='0' allowfullscreen='allowfullscreen'></iframe>
           <?php endif; ?>
 
+          <?php get_template_part('_partials/presenter-list'); ?>
+          
         </section>
 
 

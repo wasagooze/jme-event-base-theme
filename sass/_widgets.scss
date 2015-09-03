@@ -107,3 +107,8 @@ footer .widget {
   display: block;
 }
 
+// Not ready to show tag clouds on SPWF
+#main .tagcloud {
+  display: none;
+}
+
