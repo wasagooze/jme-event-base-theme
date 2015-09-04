@@ -23,4 +23,4 @@
 	</aside>
 <?php endif; ?>
 
-</div><!-- #secondary .widget-area -->
+</aside><!-- #secondary .widget-area -->
