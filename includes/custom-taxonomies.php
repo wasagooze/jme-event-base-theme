@@ -146,7 +146,7 @@ function create_end_time_taxonomy() {
 
 function jme_taxonomy_dropdown($selected, $taxonomy, $post_type) {
   if ($selected == null) {
-    $selected = 0;
+    $selected = '0';
   }
 
   if ($post_type == null) {

@@ -64,7 +64,7 @@ if ($post_type != '') {
 
 		<?php if (has_taxonomy($post_type, 'presenter') || is_tax('presenter')): ?>
 		<label for="presenter-dropdown">
-			Filter By Presenter: <?php echo jme_taxonomy_dropdown($selected, 'presenter',$post_type); ?>		
+			Filter By Presenter: <?php echo jme_taxonomy_dropdown($selected, 'presenter', $post_type); ?>		
 		</label>
 		<?php endif; ?>
 	</div>	
