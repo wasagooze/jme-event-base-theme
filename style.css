@@ -1411,7 +1411,10 @@ footer .social {
     padding: 0.25em; }
 
   #content .page-header {
-    padding: 1em 2em; }
+    padding: 1em 1.5em; }
+
+  #content .hentry {
+    padding: 0 1em; }
 
   .attraction-filters {
     padding: 0 1em 0 0; }
