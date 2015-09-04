@@ -13,6 +13,8 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php get_template_part('_partials/pageheader', 'page'); ?>
+
 			<?php get_template_part( '_partials/content', 'page' ); ?>
 
 		<?php endwhile; // end of the loop. ?>

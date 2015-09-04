@@ -18,7 +18,6 @@ if (is_post_type_archive()) {
     'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )
     )
   );
-
 }
 
 ?>
@@ -51,6 +50,7 @@ if (is_post_type_archive()) {
       <?php endif; ?>
 
       </div><!-- #content -->
+
     </section><!-- #primary -->
 
 <?php get_sidebar(); ?>

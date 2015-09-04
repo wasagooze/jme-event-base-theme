@@ -10,7 +10,7 @@ get_header(); ?>
 		<div id="content" role="main">
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()) : the_post(); ?>
-				<?php get_template_part( '_partials/content', get_post_format() ); ?>
+				<?php get_template_part( '_partials/content', get_post_type() ); ?>
 			<?php endwhile; ?>
 		<?php else : ?>	
 			<?php get_template_part('_partials/404-content'); ?>

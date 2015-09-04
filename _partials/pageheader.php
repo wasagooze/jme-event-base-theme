@@ -20,9 +20,11 @@ if (is_single()) {
 }
 
 if ($post_type != '') {
-	$title = get_post_type_object($post_type)->labels->name;	
-} else {
+	$title = get_post_type_object($post_type)->labels->name . ": " . get_the_title();	
+} else if (is_tax()) {
 	$title = $term->name;
+} else if (is_author()) {
+	$title = get_the_author();
 }
 
 function has_taxonomy($post_type, $taxonomy) {
@@ -45,6 +47,7 @@ function has_taxonomy($post_type, $taxonomy) {
 		<?php echo $title; ?>
 	</h1>	
 
+	<?php if (!is_author()): ?>
 	<div class="attraction-filters">
 		<?php if ($post_type != null): ?>
 		<label for="<?php echo $post_type; ?>-dropdown">
@@ -70,10 +73,15 @@ function has_taxonomy($post_type, $taxonomy) {
 		</label>
 		<?php endif; ?>
 	</div>	
-
-	<?php if ($term != null): ?>
-		<section class="description"><?php echo $term->description; ?></section>
 	<?php endif; ?>
+
+	<section class="description">
+		<?php if ($term != null) {
+			echo $term->description; 
+		} else if (is_author()) {
+			echo get_the_author_meta("description"); 
+		} ?>
+	</section>
 
 	<?php if (!is_single()): ?>
 	<div class="pagination-nav">

@@ -147,6 +147,19 @@ function jme_post_type_dropdown($post_type, $selected, $all_option) {
   return $select;
 }
 
+function get_presenter_list() {
+
+  $presenters = get_the_terms(get_the_ID(), 'presenter');
+  if (!empty($presenters )) {
+    echo "<ul class='presenter-list'>";
+      foreach ($presenters as $presenter) {
+        $term_link = get_term_link($presenter, 'presenter');
+        echo "<li><a href='$term_link'>$presenter->name</a></li>";
+      }
+    echo "</ul>";
+    }
+}
+
 function post_type_tags_fix($request) {
     if ( isset($request['tag']) && !isset($request['post_type']) )
     $request['post_type'] = 'any';

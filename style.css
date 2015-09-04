@@ -68,12 +68,37 @@ footer, header, hgroup, menu, nav, section {
 body, input, textarea {
   color: #373737;
   font-family: Open Sans, Helvetica, Arial, sans-serif;
-  font-size: 0.9em;
   font-weight: 300;
   line-height: 1.625em; }
 
 h1 {
   font-size: 1.75em; }
+
+.page-header,
+.entry-header {
+  padding: 0.25em 3em .25em 0.625em; }
+
+.page-header h1 {
+  font-size: 2em; }
+
+.page-header .description {
+  padding: 0 1em; }
+
+.page-title,
+.entry-title {
+  clear: both;
+  color: #222;
+  font-weight: bold;
+  line-height: 1.5em; }
+  .page-title a,
+  .entry-title a {
+    color: #222;
+    text-decoration: none; }
+    .page-title a:hover, .page-title a:focus, .page-title a:active,
+    .entry-title a:hover,
+    .entry-title a:focus,
+    .entry-title a:active {
+      color: #1982d1; }
 
 .entry-content h2 {
   font-weight: bold;
@@ -388,32 +413,6 @@ header#branding {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important; }
 
-.page-header,
-.entry-header {
-  padding: 0.25em 3em .25em 0.625em; }
-
-.page-header h1 {
-  font-size: 1.865em; }
-
-.page-header .description {
-  padding: 0 1em; }
-
-.page-title,
-.entry-title {
-  clear: both;
-  color: #222;
-  font-weight: bold;
-  line-height: 1.5em; }
-  .page-title a,
-  .entry-title a {
-    color: #222;
-    text-decoration: none; }
-    .page-title a:hover, .page-title a:focus, .page-title a:active,
-    .entry-title a:hover,
-    .entry-title a:focus,
-    .entry-title a:active {
-      color: #1982d1; }
-
 .entry-meta {
   color: #666;
   clear: both;
@@ -500,16 +499,27 @@ dl.gallery-item {
   clear: both;
   display: block; }
 
-.presenter-list ul {
+ul.presenter-list {
   display: inline-block;
   margin: 0;
   list-style-type: none; }
-  .presenter-list ul li {
+  ul.presenter-list li {
+    font-weight: bold;
     display: inline-block; }
-    .presenter-list ul li:after {
-      content: ', '; }
-    .presenter-list ul li:last-child:after {
+    ul.presenter-list li:after {
+      content: ',';
+      padding-right: 0.75em; }
+    ul.presenter-list li:last-child:after {
       content: ""; }
+
+.bio {
+  border-top: 2px solid #999;
+  padding-top: 1em;
+  margin-top: 1em; }
+  .bio h1, .bio dt {
+    font-size: 1.5em; }
+  .bio p, .bio dd {
+    padding: 1em; }
 
 /* Images */
 .entry-content img,
@@ -1348,7 +1358,7 @@ footer .social {
     display: none; }
 
   #content {
-    padding-right: 0; }
+    padding: 0.5em 0 0.5em 1em; }
 
   #access {
     display: none; }
@@ -1404,7 +1414,7 @@ footer .social {
     padding: 1em 2em; }
 
   .attraction-filters {
-    padding: 0; }
+    padding: 0 1em 0 0; }
 
   .page-header select {
     display: block;

@@ -26,7 +26,6 @@ if (is_post_type_archive()) {
       <?php if (have_posts() ) : ?>
         
         <header class="page-header">
-
           <h1 class="page-title">
             Shows and Entertainment
           </h1>
@@ -43,8 +42,12 @@ if (is_post_type_archive()) {
             }
           ?>  
           <li class="attraction-thumbnail" style="background-image:url('<?php echo $large_image_url; ?>');">
-            <div class="attraction-title"><?php the_title(); ?></div>
-            <div class="attraction-subhead"><?php echo get_post_meta(get_the_ID(), 'attraction_subhead', true ); ?></div>
+            <div class="attraction-title">
+              <?php the_title(); ?>
+            </div>
+            <div class="attraction-subhead">
+              <?php echo get_post_meta(get_the_ID(), 'attraction_subhead', true ); ?>
+            </div>
           </li>
           </a>
         <?php endwhile; ?>

@@ -5,13 +5,42 @@ $font-stack: Open Sans, Helvetica, Arial, sans-serif;
 body, input, textarea {
   color: #373737;
   font-family: $font-stack;
-  font-size: 0.9em;
   font-weight: 300;
   line-height: 1.625em;
 }
 
 h1 {
   font-size: 1.75em;
+}
+
+.page-header,
+.entry-header {
+    padding: 0.25em 3em .25em 0.625em;
+}
+
+.page-header h1 {
+  font-size: 2em;
+}
+
+.page-header .description {
+  padding: 0 1em;
+}
+
+.page-title,
+.entry-title {
+  clear: both;
+  color: #222;
+  font-weight: bold;
+  line-height: 1.5em;
+  a {
+    color: #222;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      color: #1982d1;
+    }
+  }
 }
 
 .entry-content h2 {

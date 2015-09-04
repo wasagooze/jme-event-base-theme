@@ -12,10 +12,10 @@ $post_type = get_post_type();
 <section id="primary">
 	<div id="content" role="main">			
 
-	<?php get_template_part('_partials/pageheader'); ?>
-
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php get_template_part('_partials/pageheader', $post_type); ?>
+			
 			<?php get_template_part( '_partials/content', $post_type); ?>
 
 			<?php

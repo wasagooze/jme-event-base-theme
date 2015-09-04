@@ -9,9 +9,14 @@
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+
+  <?php if (!is_single() ): ?>
     <header class="entry-header">
-      <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+      <h1 class="entry-title">
+        <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+      </h1>
     </header><!-- .entry-header -->
+  <?php endif; ?>
 
       <div class="entry-content">
 
@@ -25,7 +30,7 @@
             <iframe src='<?php echo $video; ?>' frameborder='0' allowfullscreen='allowfullscreen'></iframe>
           <?php endif; ?>
 
-          <?php get_template_part('_partials/presenter-list'); ?>
+          <?php get_template_part('_partials/tag-list'); ?>
           
         </section>
 
