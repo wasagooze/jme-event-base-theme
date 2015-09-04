@@ -5,6 +5,7 @@
  */
 ?>
 
+</div>
 	<footer id="colophon" role="contentinfo">
 		<div id="supplementary" class="three">
 
