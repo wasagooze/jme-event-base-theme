@@ -42,7 +42,7 @@ if ($post_type != '') {
 		<?php echo $title; ?>
 	</h1>	
 
-	<?php if (!is_author()): ?>
+	<?php if (!is_author() && !in_the_loop()): ?>
 	<div class="attraction-filters">
 		<?php if ($post_type != null): ?>
 		<label for="<?php echo $post_type; ?>-dropdown">
@@ -78,7 +78,7 @@ if ($post_type != '') {
 		} ?>
 	</section>
 
-	<?php if (!is_single()): ?>
+	<?php if (!is_single() && !(in_the_loop())): ?>
 	<div class="pagination-nav">
 		<?php echo paginate_links(array(
 		'prev_next'          => False,
