@@ -166,6 +166,15 @@ function post_type_tags_fix($request) {
     return $request;
 } 
 
+
+function has_taxonomy($post_type, $taxonomy) {
+  if ($post_type == null) {
+    return false;
+  }
+  $obj = get_post_type_object($post_type);
+  return in_array($taxonomy, $obj->taxonomies);
+}
+
 add_filter('request', 'post_type_tags_fix');
 
 if ( ! function_exists( 'twentyeleven_comment' ) ) :

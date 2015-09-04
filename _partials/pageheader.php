@@ -20,19 +20,14 @@ if (is_single()) {
 }
 
 if ($post_type != '') {
-	$title = get_post_type_object($post_type)->labels->name . ": " . get_the_title();	
+	$title = get_post_type_object($post_type)->labels->name;
+	if (is_single()) {
+		$title .= ": " . get_the_title();	
+	}
 } else if (is_tax()) {
 	$title = $term->name;
 } else if (is_author()) {
 	$title = get_the_author();
-}
-
-function has_taxonomy($post_type, $taxonomy) {
-	if ($post_type == null) {
-		return false;
-	}
-	$obj = get_post_type_object($post_type);
-	return in_array($taxonomy, $obj->taxonomies);
 }
 
 ?>
