@@ -29,7 +29,7 @@ if (is_post_type_archive()) {
         <?php get_template_part('_partials/pageheader'); ?>    
 
           <?php while ( have_posts() ) : the_post(); ?>       	 	
-            <?php get_template_part( '_partials/content', $post_type); ?>
+            <?php get_template_part( '_partials/content', get_post_type()); ?>
           <?php endwhile; ?>
 
         <footer class="content-footer">

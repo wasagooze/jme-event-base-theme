@@ -7,7 +7,6 @@
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
   <?php if (!is_single() ): ?>
     <header class="entry-header">
       <h1 class="entry-title">

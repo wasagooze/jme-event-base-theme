@@ -16,7 +16,7 @@ $post_type = get_post_type();
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( '_partials/content', $post_type); ?>
+			<?php get_template_part( '_partials/content', get_post_type()); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
