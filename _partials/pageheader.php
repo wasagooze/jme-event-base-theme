@@ -23,6 +23,8 @@ if ($post_type != '') {
 	$title = get_post_type_object($post_type)->labels->name;
 	if (is_single()) {
 		$title .= ": " . get_the_title();	
+	} else {
+		$title = get_the_title();
 	}
 } else if (is_tax()) {
 	$title = $term->name;

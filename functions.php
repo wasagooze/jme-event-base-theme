@@ -147,6 +147,8 @@ function jme_post_type_dropdown($post_type, $selected, $all_option) {
   return $select;
 }
 
+
+if ( ! function_exists( 'get_presenter_list' ) ) :
 function get_presenter_list() {
 
   $presenters = get_the_terms(get_the_ID(), 'presenter');
@@ -159,6 +161,11 @@ function get_presenter_list() {
     echo "</ul>";
     }
 }
+endif;
+
+
+
+if ( ! function_exists( 'post_type_tags_fix' ) ) :
 
 function post_type_tags_fix($request) {
     if ( isset($request['tag']) && !isset($request['post_type']) )
@@ -166,7 +173,12 @@ function post_type_tags_fix($request) {
     return $request;
 } 
 
+endif;
 
+
+
+
+if ( ! function_exists( 'has_taxonomy' ) ) :
 function has_taxonomy($post_type, $taxonomy) {
   if ($post_type == null) {
     return false;
@@ -174,6 +186,7 @@ function has_taxonomy($post_type, $taxonomy) {
   $obj = get_post_type_object($post_type);
   return in_array($taxonomy, $obj->taxonomies);
 }
+endif;
 
 add_filter('request', 'post_type_tags_fix');
 

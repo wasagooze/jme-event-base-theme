@@ -7,6 +7,6 @@
 		<h2 class="byline">
 		by <b><?php the_author_posts_link(); ?></b> on <b><?php echo the_time(get_option('date_format')); ?></b>
 		</h2>
-	<?php endif; ?>
+		<?php endif; ?>
 	<?php endif; ?>
 </header><!-- .entry-header -->
