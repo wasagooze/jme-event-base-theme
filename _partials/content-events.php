@@ -2,22 +2,12 @@
 
   /* Template for displaying single-page attractions */
   
-  $presenters = get_the_terms(get_the_ID(), 'presenter');
 ?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
-  <?php if (!is_single() ): ?>
-    <header class="entry-header">
-      <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-        <?php if ($presenters[0] != null): ?>
-          <h2 class="byline">
-          Hosted by: <?php echo get_presenter_list(); ?>
-        </h2>
-      <?php endif; ?>
-    </header><!-- .entry-header -->
-  <?php endif; ?>
+  <?php get_template_part('_partials/pageheader'); ?>
 
       <div class="entry-content">
 

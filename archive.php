@@ -1,24 +1,9 @@
 <?php
 /**
- * Category template
+ * Archive template for custom post types
  */
 
 get_header(); 
-
-//$post_type = '';
-
-// if (is_post_type_archive()) {
-
-//   $post_type = post_type_archive_title('',false);
-
-//   query_posts(array(
-//     'post_type' => $post_type,
-//     'order' => 'ASC',
-//     'orderby' => 'title',
-//     'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )
-//     )
-//   );
-// }
 
 ?>
 
@@ -32,16 +17,7 @@ get_header();
             <?php get_template_part( '_partials/content', get_post_type()); ?>
           <?php endwhile; ?>
 
-        <footer class="content-footer">
-          <div class="pagination-nav">
-            <?php 
-            echo paginate_links(array(
-              'prev_next' => False,
-            )); 
-            ?>
-
-          </div>
-        </footer>
+        <?php get_template_part('_partials/pagefooter'); ?>
 
       <?php else : ?>
       

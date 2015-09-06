@@ -199,15 +199,16 @@ endif;
 
 if ( ! function_exists( 'jme_define_page_header_title' ) ) :
 function jme_define_page_header_title() {
+  // if it's a single page view OR in the loop
+  if (is_single() || in_the_loop()) {
+    return get_the_title();
+  }
   // is an author page, get the author name
   if (is_author()) {
     return get_the_author();
   } 
-  // if it's a single page view
-  if (is_single()) {
-    return get_the_title();
-  }
-  // if it's a post type archive, return the post type title
+
+  // if it's a post type archive and NOT in the loop, return the post type title
   if (is_post_type_archive()) {
     return post_type_archive_title('', false);
   }
@@ -215,9 +216,9 @@ function jme_define_page_header_title() {
   if (is_tax()) {
     return single_term_title('', false);
   }
-  if (is_home()) {
-    return get_the_title();
-  }
+
+  // default to title
+  return get_the_title();
 }
 endif;
 

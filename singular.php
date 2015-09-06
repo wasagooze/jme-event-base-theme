@@ -5,14 +5,10 @@
 
 get_header(); 
 
-$post_type = get_post_type();
-
 ?>
 
 <section id="primary">
-	<div id="content" role="main">			
-
-	<?php get_template_part('_partials/pageheader'); ?>
+	<div id="content" role="main">	
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
