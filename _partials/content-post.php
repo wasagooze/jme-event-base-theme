@@ -24,10 +24,6 @@
         </section>
       <?php endif; ?>
 
-      <?php if ( comments_open() ) : ?>
-        <span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentyeleven' ) . '</span>', __( '<b>1</b> Reply', 'jme_event_base_theme' ), __( '<b>%</b> Replies', 'jme_event_base_theme' ) ); ?></span>
-      <?php endif; // End if comments_open() ?>
-
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
