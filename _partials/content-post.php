@@ -8,7 +8,7 @@
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <?php if (!is_single() ): ?>
-    <?php get_template_part('_partials/pageheader'); ?>
+    <?php get_template_part('_partials/pageheader', get_post_type()); ?>
   <?php endif; ?>
 
     <div class="entry-content">

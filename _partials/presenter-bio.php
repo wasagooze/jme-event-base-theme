@@ -2,7 +2,7 @@
 
 $presenters = get_the_terms(get_the_ID(), 'presenter');
 
-if (is_single()): ?>
+if (is_single() && !empty($presenters[0])): ?>
     <?php foreach ($presenters as $term): ?>   
       <?php if (!empty($term->description)): ?>
       <section class="bio">

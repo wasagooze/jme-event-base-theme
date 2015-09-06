@@ -5,20 +5,20 @@
 
 get_header(); 
 
-$post_type = '';
+//$post_type = '';
 
-if (is_post_type_archive()) {
+// if (is_post_type_archive()) {
 
-  $post_type = post_type_archive_title('',false);
+//   $post_type = post_type_archive_title('',false);
 
-  query_posts(array(
-    'post_type' => $post_type,
-    'order' => 'ASC',
-    'orderby' => 'title',
-    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )
-    )
-  );
-}
+//   query_posts(array(
+//     'post_type' => $post_type,
+//     'order' => 'ASC',
+//     'orderby' => 'title',
+//     'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )
+//     )
+//   );
+// }
 
 ?>
 
@@ -26,7 +26,7 @@ if (is_post_type_archive()) {
       <div id="content" role="main">
 
       <?php if ( have_posts() ) : ?>
-        <?php get_template_part('_partials/pageheader'); ?>    
+        <?php get_template_part('_partials/pageheader', get_post_type()); ?>    
 
           <?php while ( have_posts() ) : the_post(); ?>       	 	
             <?php get_template_part( '_partials/content', get_post_type()); ?>
