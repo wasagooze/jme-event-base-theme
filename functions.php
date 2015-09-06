@@ -213,7 +213,7 @@ function jme_define_page_header_title() {
   }
   // if it's a category or tag, return that
   if (is_tax()) {
-    return single_term_title();
+    return single_term_title('', false);
   }
   if (is_home()) {
     return get_the_title();
