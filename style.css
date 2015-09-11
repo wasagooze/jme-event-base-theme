@@ -516,6 +516,8 @@ ul.presenter-list {
     font-size: 1.5em; }
   .bio p, .bio dd {
     padding: 1em; }
+  .bio .social {
+    padding: 1em 1em 0 1em; }
 
 /* Images */
 .entry-content img,
