@@ -19,7 +19,7 @@
 	</label>
 	<?php endif; ?>
 
-	<?php if (has_taxonomy($post_type, 'presenter') || is_tax('presenter')): ?>
+	<?php if (has_taxonomy($post_type, 'presenter')): ?>
 	<label for="presenter-dropdown">
 		Filter By Presenter: <?php echo jme_taxonomy_dropdown($selected, 'presenter', null); ?>		
 	</label>
