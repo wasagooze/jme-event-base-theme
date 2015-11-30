@@ -3,6 +3,8 @@
  * Template for displaying content on posts
  *
  */
+ $id = get_the_ID();
+  $video = get_post_meta( $id, 'attraction_video', true);
 ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,6 +14,13 @@
   <?php endif; ?>
 
     <div class="entry-content">
+
+ <section class="attraction">
+  
+          <?php get_template_part( '_partials/social' ); ?>
+
+          
+          <?php get_template_part('_partials/tag-list'); ?>
 
       <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
